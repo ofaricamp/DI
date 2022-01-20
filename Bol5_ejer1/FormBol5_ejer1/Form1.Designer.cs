@@ -29,6 +29,7 @@ namespace FormBol5_ejer1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.labelTextBox1 = new Bol5_ejer1.LabelTextBox();
@@ -46,7 +47,7 @@ namespace FormBol5_ejer1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(165, 91);
+            this.button2.Location = new System.Drawing.Point(165, 92);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -61,7 +62,7 @@ namespace FormBol5_ejer1
             this.labelTextBox1.Posicion = Bol5_ejer1.ePosicion.IZQUIERDA;
             this.labelTextBox1.PswChr = '*';
             this.labelTextBox1.Separacion = 0;
-            this.labelTextBox1.Size = new System.Drawing.Size(270, 20);
+            this.labelTextBox1.Size = new System.Drawing.Size(172, 20);
             this.labelTextBox1.TabIndex = 0;
             this.labelTextBox1.TextLbl = "LabelTextBox";
             this.labelTextBox1.TextTxt = "";
@@ -78,8 +79,10 @@ namespace FormBol5_ejer1
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
 
         }

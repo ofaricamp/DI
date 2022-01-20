@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define RECOLORCAR
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,6 @@ namespace Bol5_ejer1
         {
             InitializeComponent();
             TextLbl = Name;
-            //TextLbl = "Mira Alvaro solo quiero decirte que te equivocas";
             TextTxt = "";
             recolocar();
         }
@@ -61,12 +61,14 @@ namespace Bol5_ejer1
                 case ePosicion.IZQUIERDA:
                     lbl.Location = new Point(0, 0);
                     txt.Location = new Point(lbl.Width + Separacion, 0);
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    //txt.Width = this.Width - lbl.Width - Separacion;
+                    this.Width = txt.Width + lbl.Width + Separacion;
                     this.Height = Math.Max(txt.Height, lbl.Height);
                     break;
                 case ePosicion.DERECHA:
                     txt.Location = new Point(0, 0);
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    //txt.Width = this.Width - lbl.Width - Separacion;
+                    this.Width = txt.Width + lbl.Width + Separacion;
                     lbl.Location = new Point(txt.Width + Separacion, 0);
                     this.Height = Math.Max(txt.Height, lbl.Height);
                     break;
@@ -150,10 +152,6 @@ namespace Bol5_ejer1
                 return txt.PasswordChar;
             }
         }
-        //private void txt_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    this.OnKeyPress(e);
-        //}
 
         private void txt_KeyUp(object sender, KeyEventArgs e)
         {
@@ -161,13 +159,11 @@ namespace Bol5_ejer1
         }
         private void txt_TextChanged(object sender, EventArgs e)
         {
-            //this.OnTextChanged(e);
-            if (CambiaSeparacion != null)
+            if (TxtChanged != null)
             {
-                CambiaSeparacion(this, new EventArgs());
+                TxtChanged(this, new EventArgs());
             }
         }
-
 
         [Category("La propiedad posicion cambió")]
         [Description("Se lanza cuando la propiedad Posicion cambia")]

@@ -32,7 +32,7 @@ namespace FormBol5_ejer1
 
         private void labelTextBox1_CambiaPosicion(object sender, EventArgs e)
         {
-            this.Text = Convert.ToString(labelTextBox1.Posicion );
+            this.Text = labelTextBox1.Posicion.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,6 +55,14 @@ namespace FormBol5_ejer1
             this.Text = "hola";
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
 
+            if (MessageBox.Show("¿Quieres salir?", "Debo irme",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
