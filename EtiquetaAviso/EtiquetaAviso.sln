@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiquetaAviso", "EtiquetaAviso\EtiquetaAviso.csproj", "{983DBAF8-132C-4721-96E1-FBB65D62E4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormAviso", "FormAviso\FormAviso.csproj", "{995081DA-EA03-47FE-9A15-8E1C12B11121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{983DBAF8-132C-4721-96E1-FBB65D62E4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983DBAF8-132C-4721-96E1-FBB65D62E4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983DBAF8-132C-4721-96E1-FBB65D62E4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983DBAF8-132C-4721-96E1-FBB65D62E4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{995081DA-EA03-47FE-9A15-8E1C12B11121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995081DA-EA03-47FE-9A15-8E1C12B11121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995081DA-EA03-47FE-9A15-8E1C12B11121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995081DA-EA03-47FE-9A15-8E1C12B11121}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7A9A72C-5B9E-41D9-B35A-7B682F1C74FE}
+	EndGlobalSection
+EndGlobal
