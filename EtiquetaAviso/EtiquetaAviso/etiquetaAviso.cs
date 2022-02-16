@@ -19,14 +19,12 @@ namespace EtiquetaAviso
         Imagen
     }
 
-    public partial class etiquetaAviso : UserControl
+    public partial class etiquetaAviso : Control
     {
-        public etiquetaAviso()
-        {
-            this.Text = "Eres un grande Alvaroooooooooooooooooo";
-          
-
-        }
+        private Image imagenMarca;
+        private Color primerColor;
+        private Color segundoColor;
+        private bool gradiante;
         private Size espacioMarca;
         private eMarca marca = eMarca.Nada;
 
@@ -38,10 +36,6 @@ namespace EtiquetaAviso
             {
                 marca = value;
                 this.Refresh();
-                //if (ClickEnMarca != null)
-                //{
-                //    ClickEnMarca(this, new EventArgs());
-                //}
             }
 
             get
@@ -50,6 +44,69 @@ namespace EtiquetaAviso
             }
         }
 
+        [Category("Appearance")]
+        [Description("Indica si se pone imagen o no")]
+        public Image ImagenMarca
+        {
+            set
+            {
+                imagenMarca = value;
+                if (imagenMarca == null)
+                {
+                    marca = eMarca.Nada;
+                }
+                this.Refresh();
+            }
+            get
+            {
+                return imagenMarca;
+            }
+        }
+
+        [Category("Appearance")]
+        [Description("Pones el primer color para el degradado o no")]
+        public Color PrimerColor
+        {
+            set
+            {
+                primerColor = value;
+                this.Refresh();
+            }
+            get
+            {
+                return primerColor;
+            }
+        }
+
+        [Category("Appearance")]
+        [Description("Pones el segundo color para el degradado o no")]
+        public Color SegundoColor
+        {
+            set
+            {
+                segundoColor = value;
+                this.Refresh();
+            }
+            get
+            {
+                return segundoColor;
+            }
+        }
+
+        [Category("Appearance")]
+        [Description("Determina si el fondo se pondra gradiante o no")]
+        public bool Gradiante
+        {
+            set
+            {
+                gradiante = value;
+                this.Refresh();
+            }
+            get
+            {
+                return gradiante;
+            }
+        }
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -61,12 +118,25 @@ namespace EtiquetaAviso
 
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             SolidBrush b = new SolidBrush(this.ForeColor);
-            Image image = Image.FromFile("C:\\alvaroApreciame.jpg");
-            LinearGradientBrush linearBruh = new LinearGradientBrush(
-            new Point(0, 0),
-            new Point(this.Width, this.Height),
-            Color.FromArgb(255, 0, 60, 154),
-            Color.FromArgb(0, 100, 60, 60));
+            LinearGradientBrush linearBruh;
+            if (gradiante)
+            {
+                linearBruh = new LinearGradientBrush(
+                new Point(0, 0),
+                new Point(this.Width, this.Height),
+                primerColor,
+                segundoColor);
+            }
+            else
+            {
+                linearBruh = new LinearGradientBrush(
+                new Point(0, 0),
+                new Point(this.Width, this.Height),
+                Color.FromArgb(0, 0, 0, 0),
+                Color.FromArgb(0, 0, 0, 0));
+
+            }
+            e.Graphics.FillRectangle(linearBruh, 0, 0, this.Width, this.Height);
 
             switch (Marca)
             {
@@ -89,27 +159,30 @@ namespace EtiquetaAviso
                     lapiz.Dispose();
                     break;
                 case eMarca.Imagen:
-                    e.Graphics.FillRectangle(linearBruh, 0, 0, this.Width, this.Height);
-                    grosor = 20;
-                    g.DrawImage(image, grosor, grosor, h, h);
-                    offsetX = h + grosor;
-                    offsetY = grosor;
+                    if (ImagenMarca != null)
+                    {
+                        e.Graphics.FillRectangle(linearBruh, 0, 0, this.Width, this.Height);
+                        grosor = 20;
+                        g.DrawImage(imagenMarca, grosor, grosor, h, h);
+                        offsetX = h + grosor;
+                        offsetY = grosor;
+                    }
                     break;
             }
 
             g.DrawString(this.Text, this.Font, b, offsetX + grosor, offsetY);
             Size tam = g.MeasureString(this.Text, this.Font).ToSize();
             this.Size = new Size(tam.Width + offsetX + grosor, tam.Height + offsetY * 2);
-            espacioMarca = this.Size - tam;
+            espacioMarca =new Size((this.Size.Width - tam.Width), this.Size.Height);
             b.Dispose();
             linearBruh.Dispose();
-            
+
         }
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
-            if (e.X <= espacioMarca.Width && e.Y <= espacioMarca.Height)
+            if (e.X < espacioMarca.Width && e.Y < espacioMarca.Height)
             {
                 ClickEnMarca(this, new EventArgs());
             }
@@ -118,6 +191,5 @@ namespace EtiquetaAviso
         [Category("La propiedad Onclick del componente")]
         [Description("Se lanza cuando se hace clin en el componente")]
         public event System.EventHandler ClickEnMarca;
-
     }
 }

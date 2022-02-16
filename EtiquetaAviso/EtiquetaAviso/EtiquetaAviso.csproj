@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="etiquetaAviso.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="etiquetaAviso.Designer.cs">
       <DependentUpon>etiquetaAviso.cs</DependentUpon>
