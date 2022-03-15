@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,27 +109,42 @@ namespace RespasoExamenRecuDI
             }
         }
 
+        public Size espacioMarca;
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
             Graphics g = e.Graphics;
             int grosor = 0;
             int offsetX = 0;
             int offsetY = 0;
             int altura = this.Font.Height;
+          
+            LinearGradientBrush linearG;
 
+            if (gradiante)
+            {
+                linearG = new LinearGradientBrush(new Point(0, 0), new Point(this.Width, this.Height),
+                    primerColor,segundoColor);
+            }
+            else
+            {
+                linearG = new LinearGradientBrush(new Point(0, 0), new Point(this.Width, this.Height),
+                    Color.FromArgb(0,0,0),Color.FromArgb(0,0,0));
+            }
+            
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             switch (Marca)
             {
                 case eMarca.Circulo:
+                    e.Graphics.FillRectangle(linearG, 0, 0, this.Width, this.Height);
                     grosor = 20;
                     g.DrawEllipse(new Pen(Color.Green, grosor), grosor, grosor, altura, altura);
                     offsetX = altura + grosor;
                     offsetY = grosor;
                     break;
                 case eMarca.Cruz:
+                    e.Graphics.FillRectangle(linearG, 0, 0, this.Width, this.Height);
                     grosor = 3;
                     Pen lapiz = new Pen(Color.Red, grosor);
                     g.DrawLine(lapiz, grosor, grosor, altura, altura);
@@ -138,18 +154,28 @@ namespace RespasoExamenRecuDI
                     lapiz.Dispose();
                     break;
                 case eMarca.Imagen:
+                    if (ImagenMarca != null)
+                    {
+                        e.Graphics.FillRectangle(linearG, 0, 0, this.Width, this.Height);
+                        grosor = 20;
+                        g.DrawImage(imagenMarca,grosor,grosor,altura,altura);
+                        offsetX = altura + grosor;
+                        offsetY = grosor;
+                    }
                     break;
             }
             SolidBrush brush = new SolidBrush(this.ForeColor);
             g.DrawString(this.Text, this.Font, brush, offsetX + grosor, offsetY);
             Size tamanho = g.MeasureString(this.Text, this.Font).ToSize();
             this.Size = new Size(tamanho.Width + offsetX + grosor, tamanho.Height + offsetY * 2);
+            espacioMarca = new Size((this.Width - tamanho.Width), this.Height);
             base.Dispose();
+            linearG.Dispose();
         }
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
-            if (ClickEnMarca != null)
+            if (ClickEnMarca != null && (e.X <= espacioMarca.Width && e.Y <= espacioMarca.Height))
             {
                 ClickEnMarca(this, new EventArgs());
             }
