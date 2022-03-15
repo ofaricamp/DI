@@ -1,0 +1,8 @@
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\bin\Debug\RespasoExamenRecuDI.dll
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\bin\Debug\RespasoExamenRecuDI.pdb
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.LabelTextBox.resources
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.dll
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.pdb
