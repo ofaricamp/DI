@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EtiquetaAviso.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EtiquetaAviso.Designer.cs">
+      <DependentUpon>EtiquetaAviso.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabelTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -52,6 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EtiquetaAviso.resx">
+      <DependentUpon>EtiquetaAviso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LabelTextBox.resx">
       <DependentUpon>LabelTextBox.cs</DependentUpon>
     </EmbeddedResource>

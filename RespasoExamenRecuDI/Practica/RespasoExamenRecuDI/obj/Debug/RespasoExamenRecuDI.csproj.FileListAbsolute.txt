@@ -6,3 +6,4 @@ C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debu
 C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.csproj.CoreCompileInputs.cache
 C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.dll
 C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.pdb
+C:\Users\OscarFari\source\repos\RespasoExamenRecuDI\RespasoExamenRecuDI\obj\Debug\RespasoExamenRecuDI.EtiquetaAviso.resources
