@@ -1,0 +1,7 @@
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\obj\Debug\EjerciciosRepasoBase.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\obj\Debug\EjerciciosRepasoBase.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\bin\Debug\EjerciciosRepasoBase.exe.config
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\bin\Debug\EjerciciosRepasoBase.exe
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\bin\Debug\EjerciciosRepasoBase.pdb
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\obj\Debug\EjerciciosRepasoBase.exe
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\EjerciciosRepasoBase\obj\Debug\EjerciciosRepasoBase.pdb
