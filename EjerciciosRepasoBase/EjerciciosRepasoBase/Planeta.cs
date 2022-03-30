@@ -8,11 +8,12 @@ namespace EjerciciosRepasoBase
 {
     class Planeta : Astro
     {
-        public Astro[] satelites = { };
+        //public Astro[] satelites;
+        public List<Astro> satelites;
         private bool gaseoso;
         public Planeta()
         {
-            new Planeta("",0,false);
+            new Planeta("", 0, false);
         }
 
         public Planeta(string nombre, int radio, bool gaseoso)
@@ -20,15 +21,15 @@ namespace EjerciciosRepasoBase
             this.Nombre = nombre;
             this.Radio = radio;
             this.gaseoso = gaseoso;
-            this.satelites = new Astro[] { };
+            this.satelites = new List<Astro>();
         }
         public bool Gaseoso
         {
-            set 
+            set
             {
                 gaseoso = value;
             }
-            get 
+            get
             {
                 return gaseoso;
             }

@@ -8,8 +8,8 @@ namespace EjerciciosRepasoBase
 {
     class RadioNegativoException : Exception
     {
-            public RadioNegativoException(string mensaje) : base("Problema:" + mensaje)
-            {
-            }
+        public RadioNegativoException(string mensaje) : base("Problema:" + mensaje)
+        {
+        }
     }
 }

@@ -6,35 +6,29 @@ using System.Threading.Tasks;
 
 namespace EjerciciosRepasoBase
 {
-
-    //public class RadioNegativoException : Exception
-    //{
-    //    public RadioNegativoException(string mensaje) : base("Problema:" + mensaje)
-    //    {
-    //    }
-    //}
     class Astro
     {
         private string nombre;
         private int radio;
-        //public Astro(string nombre, int radio)
-        //{
-        //    this.nombre = nombre;
-        //    this.radio = radio;
-        //}
+        public Astro() { }
+        public Astro(string nombre, int radio)
+        {
+            this.nombre = nombre;
+            this.radio = radio;
+        }
 
         public string Nombre
         {
-            set 
+            set
             {
-             //   nombre = value.ToUpper().TrimStart(' ').TrimEnd(' ');
+                //   nombre = value.ToUpper().TrimStart(' ').TrimEnd(' ');
                 nombre = value.ToUpper();
             }
             get { return nombre; }
         }
-        public int Radio 
+        public int Radio
         {
-            set 
+            set
             {
                 if (value >= 0)
                 {
@@ -45,13 +39,13 @@ namespace EjerciciosRepasoBase
                     throw new RadioNegativoException("El radio debe ser positivo");
                 }
             }
-            get 
-            { 
-                return radio; 
+            get
+            {
+                return radio;
             }
         }
 
-        public string getNombre(char caracter, string hola) 
+        public string getNombre(char caracter, string hola)
         {
             string prueba = "";
             char[] contenidoHola = hola.ToCharArray();

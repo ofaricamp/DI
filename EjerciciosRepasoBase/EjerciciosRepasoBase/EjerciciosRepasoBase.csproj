@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C052175-0DA2-4E17-AC60-E487AB4828EC}</ProjectGuid>
+    <ProjectGuid>{37DB2893-637A-47D9-892F-F9BCA77AFFD5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>EjerciciosRepasoBase</RootNamespace>
     <AssemblyName>EjerciciosRepasoBase</AssemblyName>
@@ -47,6 +47,7 @@
     <Compile Include="Planeta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadioNegativoException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
