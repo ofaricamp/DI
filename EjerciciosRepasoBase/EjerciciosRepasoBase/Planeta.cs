@@ -8,20 +8,20 @@ namespace EjerciciosRepasoBase
 {
     class Planeta : Astro
     {
-        //public Astro[] satelites;
         public List<Astro> satelites;
         private bool gaseoso;
-        public Planeta()
+        public Planeta() //lamar al otro
         {
-            new Planeta("", 0, false);
+             new Planeta("", 0, false);
+            
         }
 
-        public Planeta(string nombre, int radio, bool gaseoso)
+        public Planeta(string nombre, int radio, bool gaseoso) //llamar a base
         {
-            this.Nombre = nombre;
-            this.Radio = radio;
-            this.gaseoso = gaseoso;
-            this.satelites = new List<Astro>();
+            base.Nombre = nombre;
+            base.Radio = radio;
+            Gaseoso = gaseoso;
+            satelites = new List<Astro>();
         }
         public bool Gaseoso
         {

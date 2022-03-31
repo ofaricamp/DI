@@ -11,98 +11,119 @@ namespace EjerciciosRepasoBase
         public static Planeta AddPlaneta()
         {
             Planeta planeta = new Planeta();
-            Astro luna = new Astro();
             int gaseoso;
             int numeroDeLunas = 0;
-
-            do
+            try
             {
                 Console.WriteLine("Con que quieres añadir un planeta eh, pues cuentame");
-                Console.WriteLine("Es o no es Gaseoso?\n1-Si\t2-No");
+                Console.WriteLine("Es o no es Gaseoso?\n1-Si\t2-No(aunque en caso de poner cualquier otro número se dirá que no es gaseoso)");
                 gaseoso = int.Parse(Console.ReadLine());
 
-                if (gaseoso == 1)
+                //if (gaseoso == 1)
+                //{
+                //    planeta.Gaseoso = true;
+                //}
+                //else
+                //{
+                //    planeta.Gaseoso = false;
+                //}
+
+                planeta.Gaseoso = gaseoso == 1 ;
+
+                if (AddAstro("del Planeta") != null)
                 {
-                    planeta.Gaseoso = true;
-                }
-                else if (gaseoso == 2)
-                {
-                    planeta.Gaseoso = false;
+                    Console.WriteLine("De cuantas Lunas dispone tu planeta?");
+                    numeroDeLunas = int.Parse(Console.ReadLine());
+                    planeta.satelites = new List<Astro>();
+                    for (int i = 1; i <= numeroDeLunas; i++)
+                    {
+                        if (AddAstro("de la Luna") != null)  //revisar
+                        {
+                            planeta.satelites.Add(AddAstro("de la Luna"));
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+
+                    return planeta;
                 }
                 else
                 {
-                    Console.WriteLine("1 o 2 no hay más");
+                    return null;
                 }
-
-            } while (gaseoso != 1);
-
-            Console.WriteLine("Como se llama el planeta?");
-            planeta.Nombre = Console.ReadLine();
-            Console.WriteLine("Cuanto es el radio del planeta?");
-            planeta.Radio = int.Parse(Console.ReadLine());
-            Console.WriteLine("De cuantas Lunas dispone tu planeta?");
-            numeroDeLunas = int.Parse(Console.ReadLine());
-            for (int i = 0; i <= numeroDeLunas; i++)
-            {
-                Console.WriteLine("Como se llama la luna?");
-                luna.Nombre = Console.ReadLine();
-                Console.WriteLine("Cuanto es el radio la luna?");
-                luna.Radio = int.Parse(Console.ReadLine());
-                planeta.satelites.Add(luna);
             }
-
-            return planeta;
+            catch (InvalidCastException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
         }
 
-        public static Astro AddAstro()
+        public static Astro AddAstro(string contenido)
         {
             Astro astro = new Astro();
-            bool correcto = true;
 
-            do
+            try
             {
-                try
-                {
-                    Console.WriteLine("Por favor escribe el Nombre del nuevo astro");
-                    astro.Nombre = Console.ReadLine();
-                    Console.WriteLine("Por favor escribe el Radio del nuevo astro");
-                    astro.Radio = int.Parse(Console.ReadLine());
-                }
-                catch (RadioNegativoException re)
-                {
-                    Console.WriteLine(re.Message);
-                    correcto = false;
-                }
-                catch (ArgumentNullException)
-                {
-                    Console.WriteLine("Debe no ser nulo");
-                    correcto = false;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("El formato indicado no es el correcto");
-                    correcto = false;
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("un poco grande de mas el Radio");
-                    correcto = false;
-                }
-            } while (!correcto);
-
+                Console.WriteLine($"Por favor escribe el Nombre {contenido}");
+                astro.Nombre = Console.ReadLine();
+                Console.WriteLine($"Por favor escribe el Radio {contenido}");
+                astro.Radio = int.Parse(Console.ReadLine());
+            }
+            catch (RadioNegativoException re)
+            {
+                Console.WriteLine(re.Message);
+                return null;
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
             return astro;
         }
 
         public static void MuestraDatos(List<Astro> astros)
         {
+            int cont = 0;
             foreach (Astro astrocitos in astros)
             {
                 if (astrocitos is Planeta)
                 {
-                    Console.WriteLine("Nombre: " + astrocitos.getNombre('.') +
+                    Console.WriteLine("Nombre: " + astrocitos.getNombre(".") +
                         "\nRadio: " + astrocitos.Radio +
                         "\nGaseoso: " + ((Planeta)astrocitos).Gaseoso
                         + "\nCantidad De Lunas: " + ((Planeta)astrocitos).satelites.Count);
+                    if (((Planeta)astrocitos).satelites.Count > 0)
+                    {
+                        Console.WriteLine("Y la informacio de la/s luna/s es:");
+                        foreach (Astro luna in ((Planeta)astrocitos).satelites)
+                        {
+                            Console.WriteLine($"Luna {cont} Nombre: {luna.getNombre("_")} Radio: {luna.Radio}");
+                            cont++;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No existen Lunas");
+                    }
                 }
                 else
                 {
@@ -114,25 +135,17 @@ namespace EjerciciosRepasoBase
         static void Main(string[] args)
         {
             int opcion;
-            Astro pruebAstro = new Astro();
-            Planeta pruebaPlaneta = new Planeta();
             List<Astro> astros = new List<Astro>();
+            Astro astroAux = new Astro();
             astros.Add(new Astro("Aquatos", 10));
             astros.Add(new Astro("Taitum", 1000));
             astros.Add(new Astro("Taitum", 20));
             astros.Add(new Astro("Torrente", 5));
             astros.Add(new Astro("Tiraniland", 58));
             astros.Add(new Planeta("Planeta", 25, true));
-
-            //Console.WriteLine(astro.getNombre('.', "hola"));
-            //astro.Nombre = "Luna";
-            //astro.Radio = 10;
-            //Console.WriteLine(astro.getNombre('.'));
-            //Console.WriteLine(astro.Nombre + " " + astro.Radio);
-            // Console.ReadKey();
-            try
+            do
             {
-                do
+                try
                 {
                     Console.WriteLine("\nElige una opción");
                     Console.WriteLine("1-Añadir Planeta");
@@ -144,16 +157,18 @@ namespace EjerciciosRepasoBase
                     switch (opcion)
                     {
                         case 1:
-                            pruebaPlaneta = AddPlaneta();
-                            astros.Add(AddPlaneta());
-                            Console.WriteLine("Nombre: " + pruebaPlaneta.Nombre + "\nRadio: " + pruebaPlaneta.Radio +
-                                "\n Nº Satelites: " + pruebaPlaneta.satelites.Count());
+                            astroAux = AddPlaneta();
+                            if (AddPlaneta() != null)  //revisar
+                            {
+                                astros.Add(AddPlaneta());
+                            }
                             Console.WriteLine("Size: " + astros.Count);
                             break;
                         case 2:
-                            pruebAstro = AddAstro();
-                            astros.Add(AddAstro());
-                            Console.WriteLine("Nombre: " + pruebAstro.Nombre + "\nRadio: " + pruebAstro.Radio);
+                            if (AddAstro("del Astro") != null)  //revisar
+                            {
+                                astros.Add(AddAstro("del Astro"));
+                            }
                             Console.WriteLine("Size: " + astros.Count);
                             break;
                         case 3:
@@ -161,24 +176,17 @@ namespace EjerciciosRepasoBase
                             break;
                         case 4:
                             Console.WriteLine("Cantidad Original: " + astros.Count);
-                            List<Astro> copia = astros;
-                            foreach (Astro astr in astros)
+                            List<Astro> copia = new List<Astro>();
+                            foreach (Astro item in astros)
                             {
-                                // Console.WriteLine("Cantidad Sin repetir: " + copia.Count);
-                                foreach (Astro ast in copia)
+                                if (!copia.Contains(item))
                                 {
-                                    if (!astr.Nombre.Equals(ast.Nombre))
-                                    {
-                                        if (!copia.Contains(astr))
-                                        {
-                                            copia.Add(astr);
-                                        }
-                                        Console.WriteLine("Nombre: " + astr.Nombre + "\n");
-                                    }
+                                    copia.Add(item);
                                 }
                             }
-                            Console.WriteLine("Copia: " + copia.Count + "\n");
-                            Console.WriteLine("Astros: " + astros.Count + "\n");
+                            astros.Clear();
+                            astros = copia;
+                            Console.WriteLine("Cantidad Nueva: " + copia.Count);
                             break;
                         case 5:
                             Console.WriteLine("Lograste salir aparentemente");
@@ -188,16 +196,13 @@ namespace EjerciciosRepasoBase
                             Console.WriteLine("Opción no encontrada");
                             break;
                     }
-                } while (opcion != 5);
-            }
-            catch (InvalidCastException)
-            {
-                Console.WriteLine("Formato no válido");
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Formato no válido");
-            }
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                    opcion = 6;
+                }
+            } while (opcion != 5);
         }
     }
 }

@@ -13,16 +13,16 @@ namespace EjerciciosRepasoBase
         public Astro() { }
         public Astro(string nombre, int radio)
         {
-            this.nombre = nombre;
-            this.radio = radio;
+            Nombre = nombre;  //mayúscula
+            Radio = radio;
         }
 
         public string Nombre
         {
             set
             {
-                //   nombre = value.ToUpper().TrimStart(' ').TrimEnd(' ');
-                nombre = value.ToUpper();
+                //nombre = value.ToUpper().TrimStart(' ').TrimEnd(' ');
+                nombre = value.ToUpper().Trim();
             }
             get { return nombre; }
         }
@@ -45,59 +45,44 @@ namespace EjerciciosRepasoBase
             }
         }
 
-        public string getNombre(char caracter, string hola)
+        //public string getNombre(char caracter, string hola)
+        //{
+        //    string prueba = "";
+        //    char[] contenidoHola = hola.ToCharArray();
+        //    for (int i = 0; i < contenidoHola.Length; i++)
+        //    {
+        //        if ((i / 2 != 0) || i == 1)
+        //        {
+        //            prueba += caracter;
+        //        }
+        //        prueba += contenidoHola[i].ToString();
+
+        //    }
+        //    return prueba;
+        //}
+
+        public string getNombre(string caracter)
         {
-            string prueba = "";
-            char[] contenidoHola = hola.ToCharArray();
-            //char [] contenido = Nombre.ToCharArray();
+            char[] nombreArray = Nombre.ToCharArray();
+            string nombreSeparado = nombreArray[0].ToString();
 
-            //for (int i = 0; i < contenido.Length; i++)
-            //{
-            //    if ((i / 2 != 0) || i == 1)
-            //    {
-            //        Nombre += caracter;
-            //    }
-            //    Nombre += contenido[i].ToString();
-
-            //}
-
-            for (int i = 0; i < contenidoHola.Length; i++)
+            for (int i = 1; i <= nombreArray.Length - 1; i++)
             {
-                if ((i / 2 != 0) || i == 1)
-                {
-                    prueba += caracter;
-                }
-                prueba += contenidoHola[i].ToString();
-
-            }
-            return prueba;
-        }
-        public string getNombre(char caracter)
-        {
-            char[] contenido = this.nombre.ToCharArray();
-            this.nombre = "";
-            for (int i = 0; i < contenido.Length; i++)
-            {
-                if ((i / 2 != 0) || i == 1)
-                {
-                    this.nombre += caracter;
-                }
-                this.nombre += contenido[i].ToString();
-
+                nombreSeparado += caracter + nombreArray[i];
             }
 
-            return Nombre;
+            return nombreSeparado;
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object obj)  //misma clase (y que no sea null)
         {
             Astro astro = (Astro)obj;
-            return this.nombre.Equals(astro.nombre);
+            return Nombre.Equals(astro.nombre);
             //return base.Equals(obj);
         }
 
         public override string ToString()
         {
-            return $"{getNombre('_')} tiene un radio de {this.radio:F2}";
+            return $"{getNombre("_")} tiene un radio de {Radio:F2}";
         }
 
     }
