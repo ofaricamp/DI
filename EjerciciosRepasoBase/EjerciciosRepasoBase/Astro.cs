@@ -13,7 +13,7 @@ namespace EjerciciosRepasoBase
         public Astro() { }
         public Astro(string nombre, int radio)
         {
-            Nombre = nombre;  //mayúscula
+            Nombre = nombre;  //mayúscula check
             Radio = radio;
         }
 
@@ -21,7 +21,6 @@ namespace EjerciciosRepasoBase
         {
             set
             {
-                //nombre = value.ToUpper().TrimStart(' ').TrimEnd(' ');
                 nombre = value.ToUpper().Trim();
             }
             get { return nombre; }
@@ -63,7 +62,7 @@ namespace EjerciciosRepasoBase
 
         public string getNombre(string caracter)
         {
-            char[] nombreArray = Nombre.ToCharArray();
+            char[] nombreArray = this.nombre.ToCharArray();
             string nombreSeparado = nombreArray[0].ToString();
 
             for (int i = 1; i <= nombreArray.Length - 1; i++)
@@ -75,15 +74,19 @@ namespace EjerciciosRepasoBase
         }
         public override bool Equals(object obj)  //misma clase (y que no sea null)
         {
-            Astro astro = (Astro)obj;
-            return Nombre.Equals(astro.nombre);
-            //return base.Equals(obj);
+            if (obj != null)
+            {
+                Astro astro = (Astro)obj;
+                return Nombre.Equals(astro.nombre);
+            }
+
+            return false;
+           // return base.Equals(obj);
         }
 
         public override string ToString()
         {
             return $"{getNombre("_")} tiene un radio de {Radio:F2}";
         }
-
     }
 }

@@ -1,0 +1,7 @@
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\bin\Debug\TrueEjercicio2.exe.config
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\bin\Debug\TrueEjercicio2.exe
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\bin\Debug\TrueEjercicio2.pdb
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\obj\Debug\TrueEjercicio2.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\obj\Debug\TrueEjercicio2.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\obj\Debug\TrueEjercicio2.exe
+C:\Users\OscarFari\source\repos\EjerciciosRepasoBase\TrueEjercicio2\obj\Debug\TrueEjercicio2.pdb

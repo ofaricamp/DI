@@ -11,6 +11,7 @@ namespace EjerciciosRepasoBase
         public static Planeta AddPlaneta()
         {
             Planeta planeta = new Planeta();
+            Astro astroAux = new Astro();
             int gaseoso;
             int numeroDeLunas = 0;
             try
@@ -30,16 +31,18 @@ namespace EjerciciosRepasoBase
 
                 planeta.Gaseoso = gaseoso == 1 ;
 
-                if (AddAstro("del Planeta") != null)
+                astroAux = AddAstro("del Planeta");
+                if (astroAux != null)
                 {
                     Console.WriteLine("De cuantas Lunas dispone tu planeta?");
                     numeroDeLunas = int.Parse(Console.ReadLine());
                     planeta.satelites = new List<Astro>();
                     for (int i = 1; i <= numeroDeLunas; i++)
                     {
-                        if (AddAstro("de la Luna") != null)  //revisar
+                        astroAux = AddAstro("de la Luna");
+                        if (astroAux != null)  //revisar
                         {
-                            planeta.satelites.Add(AddAstro("de la Luna"));
+                            planeta.satelites.Add(astroAux);
                         }
                         else
                         {
@@ -158,16 +161,17 @@ namespace EjerciciosRepasoBase
                     {
                         case 1:
                             astroAux = AddPlaneta();
-                            if (AddPlaneta() != null)  //revisar
+                            if (astroAux != null)  //revisar check
                             {
-                                astros.Add(AddPlaneta());
+                                astros.Add(astroAux);
                             }
                             Console.WriteLine("Size: " + astros.Count);
                             break;
                         case 2:
-                            if (AddAstro("del Astro") != null)  //revisar
+                            astroAux = AddAstro("del Astro");
+                            if (astroAux != null)  //revisar check
                             {
-                                astros.Add(AddAstro("del Astro"));
+                                astros.Add(astroAux);
                             }
                             Console.WriteLine("Size: " + astros.Count);
                             break;

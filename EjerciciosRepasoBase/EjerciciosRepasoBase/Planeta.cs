@@ -11,15 +11,17 @@ namespace EjerciciosRepasoBase
         public List<Astro> satelites;
         private bool gaseoso;
         public Planeta() //lamar al otro
+            :this("",0,false)
         {
-             new Planeta("", 0, false);
+             //new Planeta("", 0, false);
             
         }
 
-        public Planeta(string nombre, int radio, bool gaseoso) //llamar a base
+        public Planeta(string nombre, int radio, bool gaseoso) //llamar a base check
+            :base(nombre,radio)
         {
-            base.Nombre = nombre;
-            base.Radio = radio;
+            //base.Nombre = nombre;
+            //base.Radio = radio;
             Gaseoso = gaseoso;
             satelites = new List<Astro>();
         }
