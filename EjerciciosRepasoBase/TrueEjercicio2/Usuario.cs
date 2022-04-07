@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -104,16 +105,18 @@ namespace TrueEjercicio2
 
         private void VisualizarNotasDeAlumno(string nombreAlumno)
         {
-            int[,] notas = aula.NotasAlumno(nombreAlumno);
-            Console.WriteLine("\t");
-            for (int i = 0; i < notas.GetLength(0); i++)
+            Hashtable aprobados = aula.NotasAlumno(nombreAlumno);
+            foreach (DictionaryEntry de in aprobados)
             {
-                for (int j = 0; j < notas.GetLength(1); j++)
+                Console.Write("{0}\t",de.Key);
+                for (int i  = 0; i  < ((int [])(de.Value)).Length; i ++)
                 {
-
+                    Console.Write(((int[])(de.Value))[i]+"\t");
                 }
             }
+            Console.WriteLine();
         }
-        
+
+
     }
 }

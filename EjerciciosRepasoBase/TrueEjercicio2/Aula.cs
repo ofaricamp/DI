@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -88,26 +89,79 @@ namespace TrueEjercicio2
             return notasAux / notas.GetLength(0);
         }
 
-        public int[,] NotasAlumno(string nombreAlumno)
+        public Hashtable NotasAlumno(string nombreAlumno)
         {
-            int[,] notasDeAlumno = new int[1,1];
+            Hashtable alumnosAprobados = new Hashtable();
+            int[] notasDeAlumno = new int[asignatura.Length];
             for (int i = 0; i < notas.GetLength(0); i++)
             {
                 if (alumno[i] == nombreAlumno)
                 {
                     for (int j = 0; j < notas.GetLength(1); j++)
                     {
-                        notasDeAlumno[i, 0] = notas[i, j];
-                        //Console.Write(notasDeAlumno[i,0]+"\t");
+                        notasDeAlumno[j] = notas[i, j];
+                    }
+                    alumnosAprobados.Add(alumno[i], notasDeAlumno);
+                }
+            }
+            return alumnosAprobados;
+        }
+
+        //TODO: Óscar deja de ser tan subnormal y ponlo donde debe estar
+        public Hashtable NotasAsignatura(string nombreAsignatura)
+        {
+            Hashtable alumnosAprobados = new Hashtable();
+            bool alvaro = false;
+            int[] notasDeAsignatura = new int[asignatura.Length];
+
+            for (int i = 0; i < notas.GetLength(0); i++)
+            {
+                if (alvaro)
+                {
+                    Array.Clear(notasDeAsignatura, 0, notasDeAsignatura.Length);
+                }
+                for (int j = 0; j < notas.GetLength(1); j++)
+                {
+                    if (asignatura[j] == nombreAsignatura)
+                    {
+                        notasDeAsignatura[j] = notas[i, j];
+                    }
+                    else
+                    {
+                        alvaro = true;
+                    }
+                }
+                if (!alvaro)
+                {
+                    break;
+                }
+                alumnosAprobados.Add(alumno[i], notasDeAsignatura);
+            }
+            return alumnosAprobados;
+        }
+
+        public Hashtable AlumnosAprobador()
+        {
+
+            Hashtable alumnosAprobados = new Hashtable();
+            int[] notasAprobados = new int[asignatura.Length];
+
+            for (int i = 0; i < notas.GetLength(0); i++)
+            {
+                for (int j = 0; j < notas.GetLength(1); j++)
+                {
+                    if (notas[i,j] >= 5)
+                    {
+                        notasAprobados[j] = notas[i, j];
+                    }
+                    else
+                    {
+                        
                     }
                 }
             }
-            return notasDeAlumno;
+            return null;
         }
 
-        public void VisualizarNotasAsignatura()
-        {
-
-        }
     }
 }
