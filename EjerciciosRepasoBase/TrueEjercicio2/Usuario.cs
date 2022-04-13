@@ -43,39 +43,42 @@ namespace TrueEjercicio2
                             TablaCompleta();
                             break;
                         case 2:
-                           Console.WriteLine("Media de notas: " + aula.MediaGeneralTabla());
+                            Console.WriteLine("Media de notas: " + aula.MediaGeneralTabla());
                             break;
                         case 3:
-                            Console.WriteLine("Media de alumno: " + aula.MediaAlumnos("Alumno 1"));
+                            Console.WriteLine("Media de alumno: " + aula.MediaAlumnos(1));
                             break;
                         case 4:
-                            Console.WriteLine("Media de asignatura: " + aula.MediaAsignatura("Asignatura 1"));
+                            Console.WriteLine("Media de asignatura: " + aula.MediaAsignatura(2));
                             break;
                         case 5:
-                            VisualizarNotasDeAlumno("Alumno 1");
+                            VisualizarNotasDeAlumno();
                             break;
                         case 6:
-                           // MuestraNotasAsignatura();
+                            VisualizarNotasDeUnaAsignatura();
                             break;
                         case 7:
-
+                            int minimo = 0;
+                            int maximo = 10;
+                            aula.NotaMaxMinAlumnos(0, ref maximo, ref minimo);
+                            Console.WriteLine("Nota maxima: " + maximo + "\n Nota minima: " + minimo);
                             break;
                         case 8:
-                            //Console.WriteLine(aula.DevuelveAprobados()); ;
+                            Console.WriteLine(aula.Aprobados()); ;
                             break;
                         case 9:
                             Console.WriteLine("Bye");
                             Console.ReadLine();
                             break;
                         default:
-                            Console.WriteLine("Opción no válida.");
+                            Console.WriteLine("No disponible");
                             break;
                     }
                 } while (opcion != 9);
             }
             catch (Exception ex) when (ex is FormatException)
             {
-                Console.WriteLine("Error de entrada.");
+                Console.WriteLine("Se introdujo algo no valido");
             }
         }
 
@@ -95,28 +98,61 @@ namespace TrueEjercicio2
                 Console.Write(aula.alumno[i] + "\t");
                 for (int j = 0; j < aula.notas.GetLength(1); j++)
                 {
-                   Console.Write(aula.notas[i, j] + "\t\t");
+                    Console.Write(aula.notas[i, j] + "\t\t");
                 }
-                 Console.WriteLine();
+                Console.WriteLine();
             }
 
             Console.WriteLine();
         }
 
-        private void VisualizarNotasDeAlumno(string nombreAlumno)
+        private void VisualizarNotasDeAlumno()
         {
-            Hashtable aprobados = aula.NotasAlumno(nombreAlumno);
-            foreach (DictionaryEntry de in aprobados)
+            int alumnoCod = 0;
+            do
             {
-                Console.Write("{0}\t",de.Key);
-                for (int i  = 0; i  < ((int [])(de.Value)).Length; i ++)
-                {
-                    Console.Write(((int[])(de.Value))[i]+"\t");
-                }
+                Console.WriteLine("Introduzaca el codigo del alumno a visualizar (disponemos de un total de )" + alumnos.Length);
+                alumnoCod = int.Parse(Console.ReadLine()) - 1;
+            } while (alumnoCod + 1 > alumnos.Length || alumnoCod < 0);
+
+            Console.Write("\t");
+
+            for (int i = 0; i < asignaturas.Length; i++)
+            {
+                Console.Write(asignaturas[i] + "\t");
             }
             Console.WriteLine();
+
+            Console.Write(alumnos[alumnoCod] + "\t");
+
+            for (int i = 0; i < aula.notas.GetLength(1); i++)
+            {
+                Console.Write(aula.notas[alumnoCod, i] + "\t\t");
+            }
+
+            Console.WriteLine();
         }
+        private void VisualizarNotasDeUnaAsignatura()
+        {
+            int asignaturaCod = 0;
 
+            do
+            {
+                Console.WriteLine("Introduzaca el codigo de la asignatura a visualizar (disponemos de un total de )" + asignaturas.Length);
+                asignaturaCod = int.Parse(Console.ReadLine()) - 1;
+            } while (asignaturaCod + 1 > asignaturas.Length || asignaturaCod < 0);
 
+            Console.Write("\t");
+
+            Console.WriteLine(asignaturas[asignaturaCod] + "\t");
+
+            for (int i = 0; i < aula.notas.GetLength(0); i++)
+            {
+                Console.Write(alumnos[i] + "\t");
+                Console.Write(aula.notas[i, asignaturaCod] + "\t\t");
+            }
+
+            Console.WriteLine();
+        }
     }
 }

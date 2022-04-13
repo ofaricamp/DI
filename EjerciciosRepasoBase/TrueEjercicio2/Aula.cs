@@ -48,45 +48,48 @@ namespace TrueEjercicio2
                 {
                     notasAux += notas[i, j];
                 }
-                Console.WriteLine("NotasAux value: " + notasAux);
             }
-            Console.WriteLine("Supuesto resultado de " + notasAux + "/ " + notas.GetLength(0) + " " + notas.GetLength(1) +
-                                " Result: " + notasAux / (notas.GetLength(0) * notas.GetLength(1)));
-            return notasAux / (notas.GetLength(0) * notas.GetLength(1));
+            return notasAux / notas.Length;
         }
 
-        public double MediaAlumnos(string nombreAlumno)
+        public double MediaAlumnos(int AlumnoCod)
         {
             double notasAux = 0;
-            for (int i = 0; i < notas.GetLength(0); i++)
+
+
+            for (int j = 0; j < notas.GetLength(1); j++)
             {
-                if (alumno[i] == nombreAlumno)
-                {
-                    for (int j = 0; j < notas.GetLength(1); j++)
-                    {
-                        notasAux += notas[i, j];
-                    }
-                }
+                notasAux += notas[AlumnoCod, j];
             }
             return notasAux / notas.GetLength(1);
         }
 
-        public double MediaAsignatura(string nombreAsignatura)
+        public double MediaAsignatura(int asinaturaCod)
         {
             double notasAux = 0;
-            for (int i = 0; i < notas.GetLength(0); i++)
+
+
+            for (int i = 0; i < notas.GetLength(1); i++)
             {
 
-                for (int j = 0; j < notas.GetLength(1); j++)
+                notasAux += notas[i, asinaturaCod];
+            }
+            return notasAux / notas.GetLength(0);
+        }
+
+        public void NotaMaxMinAlumnos(int alumnoCod, ref int maximo, ref int minimo)
+        {
+            for (int i = 0; i < notas.GetLength(1); i++)
+            {
+                if (maximo <= notas[alumnoCod, i])
                 {
-                    if (asignatura[j] == nombreAsignatura)
-                    {
-                        notasAux += notas[i, j];
-                    }
+                    maximo = notas[alumnoCod, i];
+                }
+                if (minimo >= notas[alumnoCod, i])
+                {
+                    minimo = notas[alumnoCod, i];
                 }
             }
-            Console.WriteLine(notasAux + "/" + notas.GetLength(0));
-            return notasAux / notas.GetLength(0);
         }
 
         public Hashtable NotasAlumno(string nombreAlumno)
@@ -107,60 +110,33 @@ namespace TrueEjercicio2
             return alumnosAprobados;
         }
 
-        //TODO: Óscar deja de ser tan subnormal y ponlo donde debe estar
-        public Hashtable NotasAsignatura(string nombreAsignatura)
+        public Hashtable Aprobados()
         {
-            Hashtable alumnosAprobados = new Hashtable();
-            bool alvaro = false;
-            int[] notasDeAsignatura = new int[asignatura.Length];
+            Hashtable aprobados = new Hashtable();
+            int cont = 0;
+            int[] notasAprobadas = new int[asignatura.Length];
 
             for (int i = 0; i < notas.GetLength(0); i++)
             {
-                if (alvaro)
-                {
-                    Array.Clear(notasDeAsignatura, 0, notasDeAsignatura.Length);
-                }
+                cont = 0;
+
                 for (int j = 0; j < notas.GetLength(1); j++)
                 {
-                    if (asignatura[j] == nombreAsignatura)
+                    if (notas[i, j] >= 5)
                     {
-                        notasDeAsignatura[j] = notas[i, j];
-                    }
-                    else
-                    {
-                        alvaro = true;
+                        notasAprobadas[j] = notas[i, j];
+                        cont++;
+                        if (cont == asignatura.Length)
+                        {
+                            aprobados.Add(alumno[i], notasAprobadas);
+                        }
                     }
                 }
-                if (!alvaro)
-                {
-                    break;
-                }
-                alumnosAprobados.Add(alumno[i], notasDeAsignatura);
+
+                notasAprobadas = new int[asignatura.Length];
             }
-            return alumnosAprobados;
-        }
 
-        public Hashtable AlumnosAprobador()
-        {
-
-            Hashtable alumnosAprobados = new Hashtable();
-            int[] notasAprobados = new int[asignatura.Length];
-
-            for (int i = 0; i < notas.GetLength(0); i++)
-            {
-                for (int j = 0; j < notas.GetLength(1); j++)
-                {
-                    if (notas[i,j] >= 5)
-                    {
-                        notasAprobados[j] = notas[i, j];
-                    }
-                    else
-                    {
-                        
-                    }
-                }
-            }
-            return null;
+            return aprobados;
         }
 
     }
