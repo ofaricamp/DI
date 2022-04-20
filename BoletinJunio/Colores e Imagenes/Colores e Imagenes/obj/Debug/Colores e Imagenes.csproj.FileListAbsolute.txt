@@ -1,0 +1,20 @@
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe.config
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\bin\Debug\Colores e Imagenes.pdb
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores e Imagenes.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Form1.resources
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Properties.Resources.resources
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.GenerateResource.cache
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores e Imagenes.exe
+C:\Users\Oscar\source\repos\EjerciciosRepasoBase\Colores e Imagenes\obj\Debug\Colores e Imagenes.pdb
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe.config
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.pdb
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Form1.resources
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Properties.Resources.resources
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.GenerateResource.cache
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.exe
+C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.pdb
