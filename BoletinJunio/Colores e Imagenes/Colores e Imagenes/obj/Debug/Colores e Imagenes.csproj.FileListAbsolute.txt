@@ -18,3 +18,13 @@ C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colo
 C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.exe
 C:\Users\Oscar\source\repos\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.pdb
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe.config
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.exe
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\bin\Debug\Colores e Imagenes.pdb
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Form1.resources
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores_e_Imagenes.Properties.Resources.resources
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.exe
+C:\Users\OscarFari\source\repos\BoletinJunio\Colores e Imagenes\Colores e Imagenes\obj\Debug\Colores e Imagenes.pdb

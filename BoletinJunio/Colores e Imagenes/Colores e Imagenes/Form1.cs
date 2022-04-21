@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Colores_e_Imagenes
 {
+    // informar del error de los colores con una label
+    // Cuando el raton salga del formulario se restablece el titulo
+    //KEYPREVIEW DATO DE SUBLIME IMPORTANCIA    
     public partial class Form1 : Form
     {
         public Form1()
@@ -79,48 +82,40 @@ namespace Colores_e_Imagenes
         }
         private void FormBAckgroundColor()
         {
+            label1.Text = "";
             try
             {
                 BackgroundImage = null;
                 BackColor = Color.FromArgb(255,int.Parse(Redtxt.Text),int.Parse(Greentxt.Text),int.Parse(Bluetxt.Text));
             }
-            catch (FormatException fe)
+            catch(Exception ex) when (ex is FormatException || ex is ArgumentException || ex is OverflowException)
             {
-
+                label1.Text = ex.Message;
             }
-            catch (ArgumentException ae)
-            {
-
-            }
-            catch(OverflowException oe)
-            {
-
-            }
+            
         }
         private void FormBackgroundImage()
         {
+            label1.Text = "";
             try
             {
-                BackColor = Color.Transparent;
-                BackgroundImage = Image.FromFile(Imagetxt.Text);
+               // BackColor = Color.Transparent;
+                BackgroundImage =  Image.FromFile(Imagetxt.Text);
             }
-            catch (FormatException ex)
+            catch (Exception ex) when (ex is FormatException || ex is ArgumentException || ex is System.IO.FileNotFoundException)
             {
-                label1.Text = "Error";
-            }
-            catch (ArgumentException e)
-            {
-                label1.Text = "Error";
-            }
-            catch(System.IO.FileNotFoundException fe)
-            {
-                label1.Text = "Error";
+                label1.Text = "Un error ocurrio con el fichero insertado";
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+            this.Text = "Colores e Imagenes";
         }
     }
 }
