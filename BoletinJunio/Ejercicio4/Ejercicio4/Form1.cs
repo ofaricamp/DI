@@ -83,7 +83,7 @@ namespace Ejercicio4
                 segundos++;
             }
 
-            this.Text = $"{minutos:00} Minutos: {segundos:00} Segundos";
+            this.Text = String.Format("{0:00}:{1:00}",minutos,segundos);
         }
     }
 }
