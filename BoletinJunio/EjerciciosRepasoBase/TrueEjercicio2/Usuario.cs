@@ -9,7 +9,7 @@ namespace TrueEjercicio2
 {
     class Usuario
     {
-        string[] alumnos = new string[4];
+        string[] alumnos = new string[10];
         string[] asignaturas = new string[4];
         Aula aula;
 
@@ -32,9 +32,9 @@ namespace TrueEjercicio2
         {
             int opcion = 0;
 
-            try
+            do
             {
-                do
+                try
                 {
                     Console.WriteLine("1- Visualizar tabla completa\n" +
                         "2- Media de notas de la tabla\n" +
@@ -71,7 +71,7 @@ namespace TrueEjercicio2
                             int minimo = 10;
                             int maximo = 0;
                             aula.NotaMaxMinAlumnos(InsertaAlumno(), ref maximo, ref minimo);
-                            Console.WriteLine($"Nota maxima: {maximo}\nNota minima: {minimo}" );
+                            Console.WriteLine($"Nota maxima: {maximo}\nNota minima: {minimo}");
                             break;
                         case 8:
                             VisualizarAprobados(aula.Aprobados());
@@ -84,24 +84,23 @@ namespace TrueEjercicio2
                             Console.WriteLine("No disponible");
                             break;
                     }
-                } while (opcion != 9);
-            }
-            catch (Exception ex) when (ex is FormatException)
-            {
-                Console.WriteLine("Se introdujo algo no valido");
-            }
+                }
+                catch (Exception ex) when (ex is FormatException || ex is OverflowException)
+                {
+                    Console.WriteLine("\nSe introdujo algo no valido\n");
+                }
+            } while (opcion != 9);
         }
 
         private void TablaCompleta()
         {
-            //Console.Write("\t");
-            string space = String.Format("{0,9}", "");
-            Console.Write(space);
+            Console.Write(String.Format("{0,9}", ""));
+           // string space = String.Format("{0,9}", "");
+           // Console.Write(space);
             for (int i = 0; i < asignaturas.Length; i++)
             {
-               //Console.Write(aula.asignatura[i] + "\t");
-               Console.Write(asignaturas[i] + space);
-
+                //Console.Write(aula.asignatura[i] + "\t");
+                Console.Write("{0,13}", asignaturas[i]); //+ space);
             }
 
             Console.WriteLine();
@@ -109,11 +108,11 @@ namespace TrueEjercicio2
             for (int i = 0; i < aula.notas.GetLength(0); i++)
             {
                 //Console.Write(aula.alumno[i] + "\t");
-                Console.Write(alumnos[i] + space);
+                Console.Write("{0,-9}", alumnos[i]);// + space);
                 for (int j = 0; j < aula.notas.GetLength(1); j++)
                 {
                     //Console.Write(aula.notas[i, j] + "\t\t");
-                    Console.Write(aula.notas[i,j] + space + space);
+                    Console.Write("{0,13}",aula.notas[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -137,7 +136,7 @@ namespace TrueEjercicio2
             int asignaturaCod = 0;
             do
             {
-                Console.WriteLine("Introduzaca el codigo del alumno a visualizar (disponemos de un total de) " + alumnos.Length);
+                Console.WriteLine("Introduzaca el codigo del asignatura a visualizar (disponemos de un total de) " + asignaturas.Length);
                 asignaturaCod = int.Parse(Console.ReadLine()) - 1;
             } while (asignaturaCod + 1 > alumnos.Length || asignaturaCod < 0);
 
@@ -153,7 +152,7 @@ namespace TrueEjercicio2
             //    alumnoCod = int.Parse(Console.ReadLine()) - 1;
             //} while (alumnoCod + 1 > alumnos.Length || alumnoCod < 0);
 
-           // Console.Write("\t");
+            // Console.Write("\t");
             Console.Write(space);
 
             for (int i = 0; i < asignaturas.Length; i++)
@@ -168,8 +167,8 @@ namespace TrueEjercicio2
 
             for (int i = 0; i < aula.notas.GetLength(1); i++)
             {
-               // Console.Write(aula.notas[alumnoCod, i] + "\t\t");
-                Console.Write(aula.notas[alumnoCod, i] + space+space);
+                // Console.Write(aula.notas[alumnoCod, i] + "\t\t");
+                Console.Write(aula.notas[alumnoCod, i] + space + space);
             }
 
             Console.WriteLine();
@@ -187,7 +186,7 @@ namespace TrueEjercicio2
 
             //  Console.Write("\t");
             Console.Write(space);
-           // Console.WriteLine(asignaturas[asignaturaCod] + "\t");
+            // Console.WriteLine(asignaturas[asignaturaCod] + "\t");
             Console.WriteLine(asignaturas[asignaturaCod] + space);
 
             for (int i = 0; i < aula.notas.GetLength(0); i++)
@@ -209,7 +208,7 @@ namespace TrueEjercicio2
                 Console.Write("Nombre: " + item.Key + "\nNotas: ");
                 for (int i = 0; i < ((int[])item.Value).Length; i++)
                 {
-                    Console.Write(((int[])item.Value)[i]+" ");
+                    Console.Write(((int[])item.Value)[i] + " ");
                 }
                 Console.WriteLine();
             }

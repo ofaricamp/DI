@@ -26,7 +26,7 @@ namespace TrueEjercicio2
             {
                 for (int j = 0; j < notas.GetLength(1); j++)
                 {
-                    notas[i, j] = valorNotas.Next(1, 10);
+                    notas[i, j] = valorNotas.Next(4, 10);
                 }
             }
         }
@@ -41,7 +41,7 @@ namespace TrueEjercicio2
                     notasAux += notas[i, j];
                 }
             }
-            Console.WriteLine(notasAux+"\\"+notas.Length);
+         //   Console.WriteLine(notasAux+"\\"+notas.Length);
             return notasAux / notas.Length;
         }
 
@@ -54,7 +54,7 @@ namespace TrueEjercicio2
             {
                 notasAux += notas[AlumnoCod, j];
             }
-            Console.WriteLine(notasAux + "\\" + notas.GetLength(1));
+        //    Console.WriteLine(notasAux + "\\" + notas.GetLength(1));
             return notasAux / notas.GetLength(1);
         }
 
@@ -63,12 +63,12 @@ namespace TrueEjercicio2
             double notasAux = 0;
 
 
-            for (int i = 0; i < notas.GetLength(1); i++)
+            for (int i = 0; i < notas.GetLength(0); i++)
             {
-
+              //  Console.WriteLine(notasAux);
                 notasAux += notas[i, asinaturaCod];
             }
-            Console.WriteLine(notasAux + "\\" + notas.GetLength(0));
+          // Console.WriteLine(notasAux + "\\" + notas.GetLength(0));
             return notasAux / notas.GetLength(0);
         }
 

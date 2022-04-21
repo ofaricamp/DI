@@ -13,49 +13,73 @@ namespace EjerciciosRepasoBase
             Planeta planeta = new Planeta();
             Astro astroAux = new Astro();
             int gaseoso;
+            bool confirmed = false;
+            string name = "";
+            int ratio = 0;
             int numeroDeLunas = 0;
+
             try
             {
                 Console.WriteLine("Con que quieres añadir un planeta eh, pues cuentame");
                 Console.WriteLine("Es o no es Gaseoso?\n1-Si\t2-No(aunque en caso de poner cualquier otro número se dirá que no es gaseoso)");
                 gaseoso = int.Parse(Console.ReadLine());
 
-                //if (gaseoso == 1)
+                planeta.Gaseoso = gaseoso == 1;
+
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine($"Por favor escribe el Nombre del planeta");
+                        name = Console.ReadLine();
+                    }
+                    catch (Exception e) when (e is ArgumentNullException || e is FormatException || e is OverflowException)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+
+                } while (String.IsNullOrWhiteSpace(name));
+
+                do
+                {
+                    try
+                    {
+                        Console.WriteLine($"Por favor escribe el Radio del planeta");
+                        confirmed = int.TryParse(Console.ReadLine(), out ratio);
+                    }
+                    catch (RadioNegativoException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                } while (!confirmed || String.IsNullOrWhiteSpace(ratio.ToString()));
+               
+                planeta.Nombre = name;
+                planeta.Radio = ratio;
+
+                //if (astroAux != null)
                 //{
-                //    planeta.Gaseoso = true;
+                Console.WriteLine("De cuantas Lunas dispone tu planeta?");
+                numeroDeLunas = int.Parse(Console.ReadLine());
+                planeta.satelites = new List<Astro>();
+                for (int i = 1; i <= numeroDeLunas; i++)
+                {
+                    astroAux = AddAstro("de la Luna");
+                    //if (astroAux != null)
+                    //{
+                    planeta.satelites.Add(astroAux);
+                    //}
+                    //else
+                    //{
+                    //    return null;
+                    //}
+                }
+
+                return planeta;
                 //}
                 //else
                 //{
-                //    planeta.Gaseoso = false;
+                //    return null;
                 //}
-
-                planeta.Gaseoso = gaseoso == 1;
-
-                astroAux = AddAstro("del Planeta");
-                if (astroAux != null)
-                {
-                    Console.WriteLine("De cuantas Lunas dispone tu planeta?");
-                    numeroDeLunas = int.Parse(Console.ReadLine());
-                    planeta.satelites = new List<Astro>();
-                    for (int i = 1; i <= numeroDeLunas; i++)
-                    {
-                        astroAux = AddAstro("de la Luna");
-                        if (astroAux != null)  //revisar
-                        {
-                            planeta.satelites.Add(astroAux);
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-
-                    return planeta;
-                }
-                else
-                {
-                    return null;
-                }
             }
             catch (InvalidCastException e)
             {
@@ -88,9 +112,9 @@ namespace EjerciciosRepasoBase
                 {
                     Console.WriteLine(e.Message);
                 }
-               
+
             } while (String.IsNullOrWhiteSpace(name));
-            
+
             do
             {
                 try
@@ -105,9 +129,10 @@ namespace EjerciciosRepasoBase
                 }
 
             } while (!confirmed || String.IsNullOrWhiteSpace(ratio.ToString()));
-            
+
             astro.Nombre = name;
             astro.Radio = ratio;
+           // Console.WriteLine($"Name: {astro.Nombre}  Ratio: {astro.Radio}");
             return astro;
         }
 
@@ -141,6 +166,7 @@ namespace EjerciciosRepasoBase
                     Console.WriteLine(astrocitos.ToString());
                 }
             }
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
@@ -172,6 +198,7 @@ namespace EjerciciosRepasoBase
                             if (astroAux != null)  //revisar check
                             {
                                 astros.Add(astroAux);
+                                Console.WriteLine("Name: " + astroAux.Nombre);
                             }
                             Console.WriteLine("Size: " + astros.Count);
                             break;
