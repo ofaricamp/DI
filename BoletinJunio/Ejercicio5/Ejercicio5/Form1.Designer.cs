@@ -135,7 +135,7 @@ namespace Ejercicio5
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 200;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // contenidotxt
@@ -207,7 +207,7 @@ namespace Ejercicio5
             this.AddMenuItem.Name = "AddMenuItem";
             this.AddMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.A)));
-            this.AddMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AddMenuItem.Size = new System.Drawing.Size(174, 22);
             this.AddMenuItem.Text = "&Añadir";
             this.AddMenuItem.Click += new System.EventHandler(this.addbtn_Click);
             // 
@@ -216,7 +216,7 @@ namespace Ejercicio5
             this.quitarToolStripMenuItem1.Name = "quitarToolStripMenuItem1";
             this.quitarToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D)));
-            this.quitarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.quitarToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.quitarToolStripMenuItem1.Text = "&Quitar";
             this.quitarToolStripMenuItem1.Click += new System.EventHandler(this.quitarbtn_Click);
             // 
@@ -224,7 +224,7 @@ namespace Ejercicio5
             // 
             this.traspasarToolStripMenuItem.Name = "traspasarToolStripMenuItem";
             this.traspasarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.traspasarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.traspasarToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.traspasarToolStripMenuItem.Text = "&Traspasar";
             this.traspasarToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
             // 

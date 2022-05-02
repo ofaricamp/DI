@@ -17,7 +17,6 @@ namespace Ejercicio5
         string titulo;
         int cont = 0;
         double ms = 0;
-        Icon icon;
         
         char[] charslengt;
         
@@ -36,8 +35,7 @@ namespace Ejercicio5
             toolTip.SetToolTip(traspas1To2btn, "Boton que pasa el/los elemento/s selecionado/s de la lista 1 a la lista 2");
             toolTip.SetToolTip(traspas2To1btn,"Boton que pasa el elemnto seleccionado de la lista 2 a la lista 1");
             toolTip.SetToolTip(list2, "La lista 2 dispone de un total de "+list2.Items.Count+" elementos");
-           // label1.Text = Directory.GetCurrentDirectory();
-          //  Icon = new Icon(Directory.GetCurrentDirectory() + "\\GreyKu.ico");
+            //label1.Text = Directory.GetCurrentDirectory() + "\\GreyKu.ico";
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -119,20 +117,30 @@ namespace Ejercicio5
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (cont >= titulo.Length)
+            if (this.cont >= titulo.Length)
             {
-                cont = 0;
+                this.cont = 0;
                 Text = "";
             }
-            Text += charslengt[(charslengt.Length-1) - cont];
-            cont++;
-            if (cont%2 == 0)
+            Text = (charslengt[(charslengt.Length-this.cont) - 1]).ToString() + Text;
+
+            this.cont++;
+
+            //if (ms > 8)
+            //{
+            //    ms = 0;
+            //}
+
+            ms += 2;
+
+            if (ms == 4)
             {
-                icon = new Icon(Directory.GetCurrentDirectory() + "\\iconito.ico");
+                Icon = new Icon(Directory.GetCurrentDirectory() + "\\iconito.ico");
             }
-            else
+            if (ms == 8)
             {
-                icon = new Icon(Directory.GetCurrentDirectory() + "\\GreyKu.ico");
+                Icon = new Icon(Directory.GetCurrentDirectory() + "\\GreyKu.ico");
+                ms = 0;
             }
         }
     }
