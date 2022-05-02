@@ -1,0 +1,11 @@
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\bin\Debug\Ejercicio6.exe.config
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\bin\Debug\Ejercicio6.exe
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\bin\Debug\Ejercicio6.pdb
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.Form1.resources
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.Properties.Resources.resources
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.exe
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.pdb
+C:\Users\OscarFari\source\repos\Ejercicio6\Ejercicio6\obj\Debug\Ejercicio6.Form2.resources
