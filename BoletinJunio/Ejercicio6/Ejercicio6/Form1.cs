@@ -53,6 +53,17 @@ namespace Ejercicio6
             }
             btn = new Button();
         }
+
+        public void GuardarNumero()
+        {
+
+        }
+
+        public void MostrarNumeros()
+        {
+
+        }
+
         void btnClick(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
@@ -68,11 +79,6 @@ namespace Ejercicio6
         private void Form1_Load(object sender, EventArgs e)
         {
             ButtonCreator();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            res = f.ShowDialog();
         }
     }
 }
