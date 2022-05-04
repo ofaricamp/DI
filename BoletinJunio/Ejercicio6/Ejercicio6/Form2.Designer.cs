@@ -59,9 +59,8 @@ namespace Ejercicio6
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(190, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
             // 
             // Deletebtn
             // 
@@ -83,8 +82,11 @@ namespace Ejercicio6
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ejercicio 6";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

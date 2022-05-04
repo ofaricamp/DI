@@ -15,7 +15,6 @@ namespace Ejercicio6
         private Button btn;
         private int xPosition = 0;
         private int yPosition = 30;
-        bool presionado = false;
         int tries = 3;
         bool numerico = false;
         int pin;
@@ -62,21 +61,26 @@ namespace Ejercicio6
         {
             Button button = (Button)sender;
             textBox1.Text += button.Text;
+
             button.BackColor = Color.BlanchedAlmond;
-            presionado = true;
         }
 
         void btnMouseEnter(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            button.BackColor = Color.Red;
+
+            if (!(button.BackColor == Color.BlanchedAlmond))
+            {
+                button.BackColor = Color.Red;
+            }
         }
 
         void btnMouseLeave(object sender, System.EventArgs e)
         {
-            if (!presionado)
-            {
                 Button button = (Button)sender;
+
+            if (!(button.BackColor == Color.BlanchedAlmond))
+            {
                 button.BackColor = Color.Transparent;
             }
         }
@@ -117,8 +121,6 @@ namespace Ejercicio6
                 }
             }
 
-            presionado = false;
-
             foreach (Control c in this.Controls)
             {
                 if (c is Button)
@@ -126,6 +128,7 @@ namespace Ejercicio6
                     c.BackColor = Color.Transparent;
                 }
             }
+            textBox1.Text = "";
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)
@@ -134,6 +137,16 @@ namespace Ejercicio6
             if (!string.IsNullOrEmpty(texto))
             {
                 textBox1.Text = texto.Substring(0, texto.Length - 1);
+            }
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                {
+                    if (c.Text.Equals(texto.Substring(0, texto.Length - 1)))
+                    {
+                        c.BackColor = Color.Transparent;
+                    }
+                }
             }
         }
     }
