@@ -37,11 +37,11 @@ namespace Ejercicio6
             this.grabarNúmeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verNúmerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Resetbtn = new System.Windows.Forms.Button();
             this.Errorlbl = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,28 +78,35 @@ namespace Ejercicio6
             // grabarNúmeroToolStripMenuItem
             // 
             this.grabarNúmeroToolStripMenuItem.Name = "grabarNúmeroToolStripMenuItem";
-            this.grabarNúmeroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.grabarNúmeroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.grabarNúmeroToolStripMenuItem.Text = "Grabar número";
             this.grabarNúmeroToolStripMenuItem.Click += new System.EventHandler(this.grabarNúmeroToolStripMenuItem_Click);
             // 
             // verNúmerosToolStripMenuItem
             // 
             this.verNúmerosToolStripMenuItem.Name = "verNúmerosToolStripMenuItem";
-            this.verNúmerosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verNúmerosToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.verNúmerosToolStripMenuItem.Text = "Ver números";
             this.verNúmerosToolStripMenuItem.Click += new System.EventHandler(this.verNúmerosToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.Resetbtn_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -127,13 +134,6 @@ namespace Ejercicio6
             this.Errorlbl.Name = "Errorlbl";
             this.Errorlbl.Size = new System.Drawing.Size(0, 13);
             this.Errorlbl.TabIndex = 3;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // Form1
             // 

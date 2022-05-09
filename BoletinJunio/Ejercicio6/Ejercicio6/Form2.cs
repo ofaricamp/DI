@@ -17,6 +17,7 @@ namespace Ejercicio6
         private int yPosition = 30;
         int tries = 3;
         bool numerico = false;
+        bool close = false;
         int pin;
 
         public void ButtonCreator()
@@ -95,19 +96,90 @@ namespace Ejercicio6
             ButtonCreator();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    numerico = int.TryParse(textBox1.Text, out pin);
+
+        //    if (!string.IsNullOrEmpty(textBox1.Text) && numerico && textBox1.Text.Length == 4)
+        //    {
+        //        if (textBox1.Text.Equals("1082"))
+        //        {
+        //            close = true;
+        //            Close();
+        //        }
+        //        else
+        //        {
+        //            tries--;
+
+        //            if (tries == 0)
+        //            {
+        //                Application.Exit();
+        //            }
+        //            else
+        //            {
+        //                label1.Text = "Quedan " + tries + " intentos";
+        //            }
+        //        }
+        //    }
+
+        //    foreach (Control c in this.Controls)
+        //    {
+        //        if (c is Button)
+        //        {
+        //            c.BackColor = Color.Transparent;
+        //        }
+        //    }
+        //    textBox1.Text = "";
+        //}
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            string texto = textBox1.Text;
+            if (texto.Length > 0)
+            {
+                if (!string.IsNullOrEmpty(texto))
+                {
+                    textBox1.Text = texto.Substring(0, texto.Length - 1);
+                }
+                foreach (Control c in this.Controls)
+                {
+                    if (c is Button)
+                    {
+                        if (c.Text.Equals(texto.Substring(0, texto.Length - 1)))
+                        {
+                            c.BackColor = Color.Transparent;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!close)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Sendbtn_Click(object sender, EventArgs e)
         {
             numerico = int.TryParse(textBox1.Text, out pin);
 
+            if (textBox1.Text.Length < 4 || textBox1.Text.Length > 4)
+            {
+                label1.Text = "El numero debe ser de 4 digitos";
+            }
+
             if (!string.IsNullOrEmpty(textBox1.Text) && numerico && textBox1.Text.Length == 4)
             {
-                if (textBox1.Text.Equals("1905"))
+                if (textBox1.Text.Equals("1082"))
                 {
+                    close = true;
                     Close();
                 }
                 else
                 {
-
                     tries--;
 
                     if (tries == 0)
@@ -129,25 +201,6 @@ namespace Ejercicio6
                 }
             }
             textBox1.Text = "";
-        }
-
-        private void Deletebtn_Click(object sender, EventArgs e)
-        {
-            string texto = textBox1.Text;
-            if (!string.IsNullOrEmpty(texto))
-            {
-                textBox1.Text = texto.Substring(0, texto.Length - 1);
-            }
-            foreach (Control c in this.Controls)
-            {
-                if (c is Button)
-                {
-                    if (c.Text.Equals(texto.Substring(0, texto.Length - 1)))
-                    {
-                        c.BackColor = Color.Transparent;
-                    }
-                }
-            }
         }
     }
 }

@@ -13,31 +13,40 @@ namespace Ejercicio6
 {
     public partial class Form3 : Form
     {
-        public void LectorDeArchivo(string ruta)
-        {
-            using (StreamReader sr = new StreamReader(ruta))
-            {
-                textBox1.Text = sr.ReadToEnd();
-            }
-        }
+        private string originalContent;
+        private Form1 form1 = new Form1();
 
-        public void Autor(string ruta)
-        {
-            using (StreamReader sr = new StreamReader(ruta))
-            {
-                textBox1.Text = sr.ReadToEnd();
-            }
-        }
-
-        public Form3(string ruta,bool numerosOAutor)
+        public Form3(string contenido)
         {
             InitializeComponent();
-            LectorDeArchivo(ruta);
+            textBox1.Text = contenido;
+            originalContent = contenido;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!originalContent.Equals(textBox1.Text))
+            {
+                if (MessageBox.Show("Cambiaste el contenido desea Guardarlo?", "Cambio en el text", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                {
+
+                }
+                else
+                {
+                    Close();
+                }
+            }
         }
     }
 }

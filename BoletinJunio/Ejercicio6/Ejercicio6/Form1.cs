@@ -13,7 +13,7 @@ namespace Ejercicio6
 {
     public partial class Form1 : Form
     {
-        string ruta = "";
+        string ruta = Directory.GetCurrentDirectory()+"\\Numeros.txt";
         private Button btn;
         private int xPosition = 0;
         private int yPosition = 30;
@@ -71,7 +71,7 @@ namespace Ejercicio6
         void btnClick(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            textBox1.Text =  button.Text;
+            textBox1.Text +=  button.Text;
             button.BackColor = Color.BlanchedAlmond;
         }
 
@@ -116,12 +116,13 @@ namespace Ejercicio6
             isnumeric = int.TryParse(textBox1.Text, out number);
             if (!string.IsNullOrEmpty(textBox1.Text) && isnumeric)
             {
+                fileDialog.OverwritePrompt = false;
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     ruta = fileDialog.FileName;
                     try
                     {
-                        using (StreamWriter sw = new StreamWriter(""))
+                        using (StreamWriter sw = new StreamWriter(ruta,true))
                         {
                             sw.Write(textBox1.Text + Environment.NewLine);
                         }
@@ -134,9 +135,28 @@ namespace Ejercicio6
             }
         }
 
+        private string LectorDeArchivo(string ruta)
+        {
+            string contenido = "";
+            try
+            {
+                using (StreamReader sr = new StreamReader(ruta))
+                {
+                    contenido = sr.ReadToEnd();
+                }
+            }
+            catch (Exception e) when (e is FileNotFoundException || e is DirectoryNotFoundException || e is IOException)
+            {
+
+                Errorlbl.Text = e.Message;
+            }
+            
+            return contenido;
+        }
+
         private void verNúmerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 formulario3 = new Form3(ruta, false);
+            Form3 formulario3 = new Form3(LectorDeArchivo(ruta));
             formulario3.ShowDialog();
         }
 
@@ -147,7 +167,8 @@ namespace Ejercicio6
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form3 formulario3 = new Form3(LectorDeArchivo(Directory.GetCurrentDirectory() + "\\Acerca_De.txt"));
+            formulario3.ShowDialog();
         }
 
         private void Resetbtn_Click(object sender, EventArgs e)
