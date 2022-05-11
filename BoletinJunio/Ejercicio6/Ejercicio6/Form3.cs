@@ -14,13 +14,14 @@ namespace Ejercicio6
     public partial class Form3 : Form
     {
         private string originalContent;
+        private string ruta;
         private Form1 form1 = new Form1();
 
-        public Form3(string contenido)
+        public Form3(string contenido, string ruta)
         {
             InitializeComponent();
             textBox1.Text = contenido;
-            originalContent = contenido;
+            Text = ruta;
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -36,11 +37,11 @@ namespace Ejercicio6
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!originalContent.Equals(textBox1.Text))
+            if (textBox1.Modified)
             {
-                if (MessageBox.Show("Cambiaste el contenido desea Guardarlo?", "Cambio en el text", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                if (MessageBox.Show("Cambiaste el contenido desea Guardarlo?", "Cambio en el text", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-
+                    File.WriteAllText(Text, textBox1.Text);
                 }
                 else
                 {

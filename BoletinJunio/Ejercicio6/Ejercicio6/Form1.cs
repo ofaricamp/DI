@@ -156,7 +156,7 @@ namespace Ejercicio6
 
         private void verNúmerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 formulario3 = new Form3(LectorDeArchivo(ruta));
+            Form3 formulario3 = new Form3(LectorDeArchivo(ruta),ruta);
             formulario3.ShowDialog();
         }
 
@@ -167,7 +167,7 @@ namespace Ejercicio6
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 formulario3 = new Form3(LectorDeArchivo(Directory.GetCurrentDirectory() + "\\Acerca_De.txt"));
+            Form3 formulario3 = new Form3(LectorDeArchivo(Directory.GetCurrentDirectory() + "\\Acerca_De.txt"), Directory.GetCurrentDirectory() + "\\Acerca_De.txt");
             formulario3.ShowDialog();
         }
 
