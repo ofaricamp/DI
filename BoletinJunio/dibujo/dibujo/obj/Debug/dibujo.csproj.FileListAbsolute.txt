@@ -1,0 +1,6 @@
+C:\Users\OscarFari\source\repos\dibujo\dibujo\bin\Debug\dibujo.dll
+C:\Users\OscarFari\source\repos\dibujo\dibujo\bin\Debug\dibujo.pdb
+C:\Users\OscarFari\source\repos\dibujo\dibujo\obj\Debug\dibujo.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\dibujo\dibujo\obj\Debug\dibujo.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\dibujo\dibujo\obj\Debug\dibujo.dll
+C:\Users\OscarFari\source\repos\dibujo\dibujo\obj\Debug\dibujo.pdb
