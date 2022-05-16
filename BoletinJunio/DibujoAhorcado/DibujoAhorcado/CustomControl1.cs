@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DibujoAhorcado
 {
-    public delegate void DelegadoAhorcado(Graphics g,Pen pen, int x1, int y1, int x2, int y2,bool ellipse);
+    public delegate void DelegadoAhorcado();// raphics g,Pen pen, int x1, int y1, int x2, int y2,bool ellipse);
 
     public partial class CustomControl1 : Control
     {
@@ -25,8 +25,13 @@ namespace DibujoAhorcado
                 g.DrawEllipse(pen, x1, y1, x2, y2);
             }
         }
-        public DelegadoAhorcado pintarDelegado = new DelegadoAhorcado(Pintado);
-        public DelegadoAhorcado[] delegados = new DelegadoAhorcado[] { };
+       // public DelegadoAhorcado pintarDelegado = new DelegadoAhorcado(Pintado);
+        public DelegadoAhorcado[] delegados = new DelegadoAhorcado[] {
+                ()=>{ } ,
+        
+        
+        
+        };
 
         public CustomControl1()
         {
