@@ -1,0 +1,6 @@
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\bin\Debug\DibujoAhorcado.dll
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\bin\Debug\DibujoAhorcado.pdb
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\obj\Debug\DibujoAhorcado.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\obj\Debug\DibujoAhorcado.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\obj\Debug\DibujoAhorcado.dll
+C:\Users\OscarFari\source\repos\DibujoAhorcado\DibujoAhorcado\obj\Debug\DibujoAhorcado.pdb

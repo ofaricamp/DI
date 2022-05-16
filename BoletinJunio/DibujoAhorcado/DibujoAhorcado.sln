@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DibujoAhorcado", "DibujoAhorcado\DibujoAhorcado.csproj", "{0AE78729-35A9-44A9-BB55-49AD0FC704BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio9", "Ejercicio9\Ejercicio9.csproj", "{0F3D34E1-A0E8-4B98-89CE-2B1D8BBFA7F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE78729-35A9-44A9-BB55-49AD0FC704BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE78729-35A9-44A9-BB55-49AD0FC704BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE78729-35A9-44A9-BB55-49AD0FC704BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE78729-35A9-44A9-BB55-49AD0FC704BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3D34E1-A0E8-4B98-89CE-2B1D8BBFA7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3D34E1-A0E8-4B98-89CE-2B1D8BBFA7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3D34E1-A0E8-4B98-89CE-2B1D8BBFA7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3D34E1-A0E8-4B98-89CE-2B1D8BBFA7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0755C4ED-B2A3-437D-91D4-61D5C400F31A}
+	EndGlobalSection
+EndGlobal
