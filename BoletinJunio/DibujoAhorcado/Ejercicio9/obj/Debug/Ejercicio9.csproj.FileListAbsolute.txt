@@ -1,0 +1,13 @@
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe.config
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.pdb
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Form1.resources
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Properties.Resources.resources
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.exe
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.pdb
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.dll
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.pdb
+C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CopyComplete
