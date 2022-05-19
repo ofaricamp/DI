@@ -37,8 +37,10 @@ namespace Ejercicio9
             this.Trieslbl = new System.Windows.Forms.Label();
             this.FailedLetterslbl = new System.Windows.Forms.Label();
             this.Stripeslbl = new System.Windows.Forms.Label();
-            this.ahorcado = new DibujoAhorcado.CustomControl1();
             this.Errorlbl = new System.Windows.Forms.Label();
+            this.Resetbtn = new System.Windows.Forms.Button();
+            this.Resultlb = new System.Windows.Forms.Label();
+            this.ahorcado = new DibujoAhorcado.CustomControl1();
             this.SuspendLayout();
             // 
             // Intentbtn
@@ -102,15 +104,6 @@ namespace Ejercicio9
             this.Stripeslbl.Size = new System.Drawing.Size(0, 13);
             this.Stripeslbl.TabIndex = 11;
             // 
-            // ahorcado
-            // 
-            this.ahorcado.Errores = 0;
-            this.ahorcado.Location = new System.Drawing.Point(232, 12);
-            this.ahorcado.Name = "ahorcado";
-            this.ahorcado.Size = new System.Drawing.Size(146, 283);
-            this.ahorcado.TabIndex = 1;
-            this.ahorcado.Text = "customControl12";
-            // 
             // Errorlbl
             // 
             this.Errorlbl.AutoSize = true;
@@ -119,12 +112,44 @@ namespace Ejercicio9
             this.Errorlbl.Size = new System.Drawing.Size(0, 13);
             this.Errorlbl.TabIndex = 12;
             // 
+            // Resetbtn
+            // 
+            this.Resetbtn.Location = new System.Drawing.Point(59, 316);
+            this.Resetbtn.Name = "Resetbtn";
+            this.Resetbtn.Size = new System.Drawing.Size(75, 23);
+            this.Resetbtn.TabIndex = 13;
+            this.Resetbtn.Text = "Reintentar";
+            this.Resetbtn.UseVisualStyleBackColor = true;
+            this.Resetbtn.Visible = false;
+            this.Resetbtn.Click += new System.EventHandler(this.Resetbtn_Click);
+            // 
+            // Resultlb
+            // 
+            this.Resultlb.AutoSize = true;
+            this.Resultlb.Location = new System.Drawing.Point(59, 297);
+            this.Resultlb.Name = "Resultlb";
+            this.Resultlb.Size = new System.Drawing.Size(0, 13);
+            this.Resultlb.TabIndex = 14;
+            // 
+            // ahorcado
+            // 
+            this.ahorcado.Errores = 1;
+            this.ahorcado.Location = new System.Drawing.Point(232, 12);
+            this.ahorcado.Name = "ahorcado";
+            this.ahorcado.Size = new System.Drawing.Size(146, 283);
+            this.ahorcado.TabIndex = 1;
+            this.ahorcado.Text = "customControl12";
+            this.ahorcado.CambiaError += new System.EventHandler(this.ahorcado_CambiaError);
+            this.ahorcado.Ahorcado += new System.EventHandler(this.ahorcado_Ahorcado);
+            // 
             // Form1
             // 
             this.AcceptButton = this.Intentbtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 351);
+            this.Controls.Add(this.Resultlb);
+            this.Controls.Add(this.Resetbtn);
             this.Controls.Add(this.Errorlbl);
             this.Controls.Add(this.Stripeslbl);
             this.Controls.Add(this.FailedLetterslbl);
@@ -136,6 +161,7 @@ namespace Ejercicio9
             this.Controls.Add(this.ahorcado);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio 9";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -153,6 +179,8 @@ namespace Ejercicio9
         private System.Windows.Forms.Label FailedLetterslbl;
         private System.Windows.Forms.Label Stripeslbl;
         private System.Windows.Forms.Label Errorlbl;
+        private System.Windows.Forms.Button Resetbtn;
+        private System.Windows.Forms.Label Resultlb;
     }
 }
 

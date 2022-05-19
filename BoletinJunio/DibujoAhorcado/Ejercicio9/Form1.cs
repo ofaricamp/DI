@@ -16,19 +16,18 @@ namespace Ejercicio9
         private string palabra;
         private char[] letras;
         private string letra;
-        private string rayas;
-        private DibujoAhorcado.DelegadoAhorcado dibujo;
+        private string letrasUsadas;
+        private char[] rayas;
+      //  private DibujoAhorcado.DelegadoAhorcado dibujo;
         
         public void LeeArchivo()
         {
             string ruta = Directory.GetCurrentDirectory() + "\\palabraSecreta.txt";
-            //Trieslbl.Text = ruta;
 
             try
             {
                 using (StreamReader sr = new StreamReader(ruta))
                 {
-                    //Trieslbl.Text = ruta;
                     palabra = sr.ReadToEnd();
                 }
             }
@@ -42,14 +41,17 @@ namespace Ejercicio9
         public Form1()
         {
             InitializeComponent();
-            Trieslbl.Text += ahorcado.Errores;
+            Trieslbl.Text += 9-ahorcado.Errores;
             LeeArchivo();
-            //Stripeslbl.Text = palabra;
             letras = palabra.ToCharArray();
+
+            rayas = new char[palabra.Length];
 
             for (int i = 0; i < letras.Length; i++)
             {
-                Stripeslbl.Text += " _";
+                rayas[i] = '_';
+                Stripeslbl.Text += " "+rayas[i];
+
             }
 
         }
@@ -59,19 +61,59 @@ namespace Ejercicio9
             
         }
 
-
         private void Intentbtn_Click(object sender, EventArgs e)
         {
-            if (palabra.Contains(lettertxt.Text.ToUpper()))
+            if (lettertxt.Text.Length == 1)
             {
-                Errorlbl.Text = "SI";
-                rayas = Stripeslbl.Text.Trim(' ');
+                if (palabra.Contains(lettertxt.Text.ToUpper()))
+                {
+                    Errorlbl.Text = "SI";
+                    for (int i = 0; i < letras.Length; i++)
+                    {
+                        Errorlbl.Text += $"Letra actual: {letras[i]}  letra comparar: {lettertxt.Text.ToUpper()}\n";
+                        if (letras[i].ToString() == lettertxt.Text.ToUpper())
+                        {
+                            rayas[i] = letras[i];
+                        }
+                        Stripeslbl.Text += " " + rayas[i].ToString();
+                    }
+                }
+                else
+                {
+                    Trieslbl.Text = $"Intentos: {8-ahorcado.Errores++}";
+                    Errorlbl.Text = "NO";
+                }
             }
             else
             {
-                Trieslbl.Text = $"Intentos: {ahorcado.Errores++}";
+                Errorlbl.Text = "Por favor escriba solo un caracter";
             }
-            Errorlbl.Text = "NO";
+
+            if (Stripeslbl.Text == palabra)
+            {
+                Resetbtn.Visible = true;
+                Resultlb.Text = "GANASTE!!!!!!!";
+            }
+            
+        }
+
+        private void ahorcado_Ahorcado(object sender, EventArgs e)
+        {
+            Intentbtn.Enabled = false;
+            lettertxt.Enabled = false;
+            Resetbtn.Visible = true;
+            Resultlb.Text = "PERDISTE!!!!!";
+
+        }
+
+        private void ahorcado_CambiaError(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Resetbtn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

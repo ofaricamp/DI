@@ -20,7 +20,7 @@ namespace DibujoAhorcado
         public CustomControl1()
         {
             InitializeComponent();
-            errores = 1;
+            errores = 0;
         }
 
         [Category("Ahorcado")]
@@ -65,29 +65,32 @@ namespace DibujoAhorcado
             //g.DrawLine(pen, Width / 2, Height - Height / 6, Width / 10, Height - Height / 10);
             //g.DrawLine(pen, Width / 2, Height - Height / 6, Width - Width / 10, Height - Height / 10);
 
-            delegados = new DelegadoAhorcado[] {
-                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width - Width / 10, Height - Height / 10);} ,
-                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width / 10, Height - Height / 10);},
-                ()=> { g.DrawLine(pen, Width / 2, Height / 2, Width - Width / 10, Height - Height / 3);},
-                ()=> { g.DrawLine(pen, Width / 10, Height - Height / 3, Width / 2, Height / 2);},
-                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width / 2, Height / 3);},
-                ()=> { g.DrawEllipse(pen, Width / 3, Height / 6, Width / 3, Height / 6);},
-                ()=> { g.DrawLine(pen, Width / 2, 0, (Width / 2), Height / 6);},
-                ()=> { g.DrawLine(pen, 0, 0, Width / 2, 0);},
-                ()=> { g.DrawLine(pen, 0, 0, 0, Height);},
-                ()=> { g.DrawLine(pen, 0, Height, Width, Height);}
-            };
-
-            for (int i = 0; i <= errores; i++)
+            delegados = new DelegadoAhorcado[]
             {
-                DelegadoAhorcado dop = delegados[i];
-                dop();
-                if (Ahorcado != null && i == errores)
+                ()=> { g.DrawLine(pen, 0, Height, Width, Height); },
+                ()=> { g.DrawLine(pen, 0, 0, 0, Height);},
+                ()=> { g.DrawLine(pen, 0, 0, Width / 2, 0);},
+                ()=> { g.DrawLine(pen, Width / 2, 0, (Width / 2), Height / 6);},
+                ()=> { g.DrawEllipse(pen, Width / 3, Height / 6, Width / 3, Height / 6);},
+                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width / 2, Height / 3);},
+                ()=> { g.DrawLine(pen, Width / 10, Height - Height / 3, Width / 2, Height / 2);},
+                ()=> { g.DrawLine(pen, Width / 2, Height / 2, Width - Width / 10, Height - Height / 3);},
+                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width / 10, Height - Height / 10);},
+                ()=> { g.DrawLine(pen, Width / 2, Height - Height / 6, Width - Width / 10, Height - Height / 10);}
+            };
+            if (errores < delegados.Length)
+            {
+                for (int i = 0; i <= errores; i++)
                 {
-                    Ahorcado(this, new EventArgs());
+                    DelegadoAhorcado dop = delegados[i];
+                    dop();
+                    if (Ahorcado != null && delegados.Length - 1 == errores)
+                    {
+                        Ahorcado(this, new EventArgs());
+                    }
                 }
             }
-          
+           
         }
 
         [Category("Ahorcado")]
