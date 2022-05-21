@@ -41,6 +41,7 @@ namespace Ejercicio9
             this.Resetbtn = new System.Windows.Forms.Button();
             this.Resultlb = new System.Windows.Forms.Label();
             this.ahorcado = new DibujoAhorcado.CustomControl1();
+            this.letrasUSadaslbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Intentbtn
@@ -107,7 +108,7 @@ namespace Ejercicio9
             // Errorlbl
             // 
             this.Errorlbl.AutoSize = true;
-            this.Errorlbl.Location = new System.Drawing.Point(45, 204);
+            this.Errorlbl.Location = new System.Drawing.Point(45, 253);
             this.Errorlbl.Name = "Errorlbl";
             this.Errorlbl.Size = new System.Drawing.Size(0, 13);
             this.Errorlbl.TabIndex = 12;
@@ -142,12 +143,21 @@ namespace Ejercicio9
             this.ahorcado.CambiaError += new System.EventHandler(this.ahorcado_CambiaError);
             this.ahorcado.Ahorcado += new System.EventHandler(this.ahorcado_Ahorcado);
             // 
+            // letrasUSadaslbl
+            // 
+            this.letrasUSadaslbl.AutoSize = true;
+            this.letrasUSadaslbl.Location = new System.Drawing.Point(48, 198);
+            this.letrasUSadaslbl.Name = "letrasUSadaslbl";
+            this.letrasUSadaslbl.Size = new System.Drawing.Size(0, 13);
+            this.letrasUSadaslbl.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AcceptButton = this.Intentbtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 351);
+            this.Controls.Add(this.letrasUSadaslbl);
             this.Controls.Add(this.Resultlb);
             this.Controls.Add(this.Resetbtn);
             this.Controls.Add(this.Errorlbl);
@@ -163,6 +173,7 @@ namespace Ejercicio9
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio 9";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,6 +192,7 @@ namespace Ejercicio9
         private System.Windows.Forms.Label Errorlbl;
         private System.Windows.Forms.Button Resetbtn;
         private System.Windows.Forms.Label Resultlb;
+        private System.Windows.Forms.Label letrasUSadaslbl;
     }
 }
 

@@ -15,9 +15,8 @@ namespace Ejercicio9
     {
         private string palabra;
         private char[] letras;
-        private string letra;
-        private string letrasUsadas;
         private char[] rayas;
+        private bool cerrar;
       //  private DibujoAhorcado.DelegadoAhorcado dibujo;
         
         public void LeeArchivo()
@@ -41,6 +40,7 @@ namespace Ejercicio9
         public Form1()
         {
             InitializeComponent();
+            cerrar = true;
             Trieslbl.Text += 9-ahorcado.Errores;
             LeeArchivo();
             letras = palabra.ToCharArray();
@@ -67,10 +67,10 @@ namespace Ejercicio9
             {
                 if (palabra.Contains(lettertxt.Text.ToUpper()))
                 {
-                    Errorlbl.Text = "SI";
+                    Stripeslbl.Text = "";
                     for (int i = 0; i < letras.Length; i++)
                     {
-                        Errorlbl.Text += $"Letra actual: {letras[i]}  letra comparar: {lettertxt.Text.ToUpper()}\n";
+                      //  Errorlbl.Text += $"Letra actual: {letras[i]}  letra comparar: {lettertxt.Text.ToUpper()}\n";
                         if (letras[i].ToString() == lettertxt.Text.ToUpper())
                         {
                             rayas[i] = letras[i];
@@ -81,7 +81,7 @@ namespace Ejercicio9
                 else
                 {
                     Trieslbl.Text = $"Intentos: {8-ahorcado.Errores++}";
-                    Errorlbl.Text = "NO";
+                    letrasUSadaslbl.Text += $"{lettertxt.Text.ToUpper()}, ";
                 }
             }
             else
@@ -89,12 +89,14 @@ namespace Ejercicio9
                 Errorlbl.Text = "Por favor escriba solo un caracter";
             }
 
-            if (Stripeslbl.Text == palabra)
+            string letrasAdivinadas = new string(rayas);
+            if (letrasAdivinadas.Equals(palabra))
             {
+                Intentbtn.Enabled = false;
+                lettertxt.Enabled = false;
                 Resetbtn.Visible = true;
                 Resultlb.Text = "GANASTE!!!!!!!";
             }
-            
         }
 
         private void ahorcado_Ahorcado(object sender, EventArgs e)
@@ -113,7 +115,20 @@ namespace Ejercicio9
 
         private void Resetbtn_Click(object sender, EventArgs e)
         {
+            cerrar = false;
             Application.Restart();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cerrar)
+            {
+                if (MessageBox.Show("El programa se cerrará", "Seguro que quieres salir?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
         }
     }
 }

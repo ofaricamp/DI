@@ -11,3 +11,16 @@ C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.p
 C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.dll
 C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.pdb
 C:\Users\OscarFari\source\repos\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CopyComplete
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe.config
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.pdb
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.dll
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.pdb
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Form1.resources
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Properties.Resources.resources
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.GenerateResource.cache
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CopyComplete
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.exe
+C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.pdb
