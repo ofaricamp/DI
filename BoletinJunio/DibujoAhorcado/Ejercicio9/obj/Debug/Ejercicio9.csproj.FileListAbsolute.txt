@@ -24,3 +24,16 @@ C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\D
 C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CopyComplete
 C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.exe
 C:\Users\Oscar\source\repos\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.pdb
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe.config
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.exe
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\Ejercicio9.pdb
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.dll
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\bin\Debug\DibujoAhorcado.pdb
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.AssemblyReference.cache
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Form1.resources
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.Properties.Resources.resources
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.GenerateResource.cache
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.csproj.CopyComplete
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.exe
+C:\Users\OscarFari\Downloads\Hola\DI-main\BoletinJunio\DibujoAhorcado\Ejercicio9\obj\Debug\Ejercicio9.pdb

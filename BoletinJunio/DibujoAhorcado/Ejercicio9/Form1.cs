@@ -14,24 +14,27 @@ namespace Ejercicio9
     public partial class Form1 : Form
     {
         private string palabra;
+        private string[] palabras = new string[]{};
+        private Random random = new Random();
         private char[] letras;
         private char[] rayas;
-        private bool cerrar;
-      //  private DibujoAhorcado.DelegadoAhorcado dibujo;
-        
-        public void LeeArchivo()
+
+        public string[] LeeArchivo()
         {
+            string[] palabritas = new string[] { };
             string ruta = Directory.GetCurrentDirectory() + "\\palabraSecreta.txt";
 
             try
             {
                 using (StreamReader sr = new StreamReader(ruta))
                 {
-                    palabra = sr.ReadToEnd();
+                    palabritas = sr.ReadToEnd().Split(' ');
                 }
+                return palabritas;
             }
             catch (Exception e)
             {
+                return null;
                 Errorlbl.Text = $"Error: {e.Message}";
             }
 
@@ -40,25 +43,33 @@ namespace Ejercicio9
         public Form1()
         {
             InitializeComponent();
-            cerrar = true;
-            Trieslbl.Text += 9-ahorcado.Errores;
-            LeeArchivo();
-            letras = palabra.ToCharArray();
+            Trieslbl.Text += 9 - ahorcado.Errores;
+            palabras = LeeArchivo();
 
-            rayas = new char[palabra.Length];
-
-            for (int i = 0; i < letras.Length; i++)
+            if (!(palabra == null))
             {
-                rayas[i] = '_';
-                Stripeslbl.Text += " "+rayas[i];
+                palabra = palabras[random.Next(palabras.Length - 1)];
+                letras = palabra.ToCharArray();
 
+                rayas = new char[palabra.Length];
+
+                for (int i = 0; i < letras.Length; i++)
+                {
+                    rayas[i] = '_';
+                    Stripeslbl.Text += " " + rayas[i];
+
+                }
+            }
+            else
+            {
+                Errorlbl.Text = "No disponemos de palabras para jugar";
             }
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Intentbtn_Click(object sender, EventArgs e)
@@ -70,7 +81,7 @@ namespace Ejercicio9
                     Stripeslbl.Text = "";
                     for (int i = 0; i < letras.Length; i++)
                     {
-                      //  Errorlbl.Text += $"Letra actual: {letras[i]}  letra comparar: {lettertxt.Text.ToUpper()}\n";
+                        //  Errorlbl.Text += $"Letra actual: {letras[i]}  letra comparar: {lettertxt.Text.ToUpper()}\n";
                         if (letras[i].ToString() == lettertxt.Text.ToUpper())
                         {
                             rayas[i] = letras[i];
@@ -80,7 +91,7 @@ namespace Ejercicio9
                 }
                 else
                 {
-                    Trieslbl.Text = $"Intentos: {8-ahorcado.Errores++}";
+                    Trieslbl.Text = $"Intentos: {8 - ahorcado.Errores++}";
                     letrasUSadaslbl.Text += $"{lettertxt.Text.ToUpper()}, ";
                 }
             }
@@ -115,20 +126,45 @@ namespace Ejercicio9
 
         private void Resetbtn_Click(object sender, EventArgs e)
         {
-            cerrar = false;
-            Application.Restart();
+            ahorcado.Errores = 1;
+            letrasUSadaslbl.Text = "";
+            Resultlb.Text = "";
+            Trieslbl.Text = "Intentos: " + (9 - ahorcado.Errores);
+            lettertxt.Enabled = true;
+            Intentbtn.Enabled = true;
+            Resetbtn.Visible = false;
+            palabras = LeeArchivo();
+            Stripeslbl.Text = "";
+            if (!(palabra == null))
+            {
+                palabra = palabras[random.Next(palabras.Length - 1)];
+                letras = palabra.ToCharArray();
+
+                rayas = new char[palabra.Length];
+
+                for (int i = 0; i < letras.Length; i++)
+                {
+                    rayas[i] = '_';
+                    Stripeslbl.Text += " " + rayas[i];
+
+                }
+            }
+            else
+            {
+                Errorlbl.Text = "No disponemos de palabras para jugar";
+            }
+           
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (cerrar)
+
+            if (MessageBox.Show("El programa se cerrará", "Seguro que quieres salir?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                if (MessageBox.Show("El programa se cerrará", "Seguro que quieres salir?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
+                e.Cancel = true;
             }
-            
+
         }
     }
 }
