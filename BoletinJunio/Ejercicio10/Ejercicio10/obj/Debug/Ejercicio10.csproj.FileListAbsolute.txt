@@ -1,0 +1,8 @@
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\bin\Debug\Ejercicio10.dll
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\bin\Debug\Ejercicio10.pdb
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.ValidateTextBox.resources
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.dll
+C:\Users\OscarFari\source\repos\Ejercicio10\Ejercicio10\obj\Debug\Ejercicio10.pdb

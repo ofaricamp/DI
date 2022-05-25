@@ -1,0 +1,13 @@
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\bin\Debug\FormEjercicio10.exe.config
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\bin\Debug\FormEjercicio10.exe
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\bin\Debug\FormEjercicio10.pdb
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.csproj.AssemblyReference.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.Properties.Resources.resources
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.csproj.GenerateResource.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.csproj.CoreCompileInputs.cache
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.exe
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.pdb
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\bin\Debug\Ejercicio10.dll
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\bin\Debug\Ejercicio10.pdb
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.Form1.resources
+C:\Users\OscarFari\source\repos\Ejercicio10\FormEjercicio10\obj\Debug\FormEjercicio10.csproj.CopyComplete
