@@ -49,6 +49,7 @@ namespace Ejercicio10
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txt);
             this.Name = "ValidateTextBox";
+            this.SizeChanged += new System.EventHandler(this.ValidateTextBox_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

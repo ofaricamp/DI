@@ -23,11 +23,11 @@ namespace Ejercicio10
         public ValidateTextBox()
         {
             InitializeComponent();
-            //txt.Multiline = false;
             pen = new Pen(Color.Red);
             txt.Location = new Point(10, 10);
             this.Height = txt.Height + 20;
             txt.Width = this.Width - 20;
+            
         }
 
         private eTipo tipo = eTipo.Numerico;
@@ -40,7 +40,7 @@ namespace Ejercicio10
             get { return tipo; }
         }
 
-        public void Comprobar()
+        public bool Comprobar()
         {
             if (!string.IsNullOrWhiteSpace(txt.Text))
             {
@@ -48,31 +48,25 @@ namespace Ejercicio10
                 {
                     for (int i = 0; i < txt.Text.Length; i++)
                     {
-                        if (char.IsLetter(txt.Text[i]))
+                        if (!(char.IsLetter(txt.Text[i])))
                         {
-                            pen = new Pen(Color.Green);
-                        }
-                        else
-                        {
-                            pen = new Pen(Color.Red);
+                            return false;
                         }
                     }
+                    return true;
                 }
                 else
                 {
                     for (int i = 0; i < txt.Text.Length; i++)
                     {
-                        if (char.IsDigit(txt.Text[i]))
+                        if (!(char.IsDigit(txt.Text[i])))
                         {
-                            pen = new Pen(Color.Green);
-                        }
-                        else
-                        {
-                            pen = new Pen(Color.Red);
+                            return false;
                         }
                     }
                 }
             }
+            return true;
         }
 
 
@@ -88,6 +82,15 @@ namespace Ejercicio10
         {
             base.OnPaint(e);
 
+            if (Comprobar())
+            {
+                pen = new Pen(Color.Green);
+            }
+            else
+            {
+                pen = new Pen(Color.Red);
+            }
+
             e.Graphics.DrawRectangle(pen, 5, 5, txt.Width + 10, txt.Height + 10);
         }
 
@@ -101,8 +104,14 @@ namespace Ejercicio10
             Refresh();
         }
 
+
         [Category("Ejercicio 10")]
         [Description("Accede al evento TextChange del TextBox")]
         public event EventHandler CambiaTexto;
+
+        private void ValidateTextBox_SizeChanged(object sender, EventArgs e)
+        {
+            this.Height = txt.Height + 20;
+        }
     }
 }

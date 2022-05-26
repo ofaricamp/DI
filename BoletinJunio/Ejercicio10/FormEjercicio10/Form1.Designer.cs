@@ -56,18 +56,20 @@ namespace FormEjercicio10
             // 
             // validateTextBox2
             // 
-            this.validateTextBox2.Location = new System.Drawing.Point(12, 245);
+            this.validateTextBox2.AutoScroll = true;
+            this.validateTextBox2.Location = new System.Drawing.Point(16, 254);
             this.validateTextBox2.Name = "validateTextBox2";
-            this.validateTextBox2.Size = new System.Drawing.Size(154, 123);
+            this.validateTextBox2.Size = new System.Drawing.Size(172, 40);
             this.validateTextBox2.TabIndex = 2;
             this.validateTextBox2.TexTxt = "";
             this.validateTextBox2.Tipo = Ejercicio10.eTipo.Numerico;
             // 
             // validateTextBox1
             // 
-            this.validateTextBox1.Location = new System.Drawing.Point(12, 85);
+            this.validateTextBox1.AutoScroll = true;
+            this.validateTextBox1.Location = new System.Drawing.Point(28, 82);
             this.validateTextBox1.Name = "validateTextBox1";
-            this.validateTextBox1.Size = new System.Drawing.Size(350, 43);
+            this.validateTextBox1.Size = new System.Drawing.Size(196, 40);
             this.validateTextBox1.TabIndex = 0;
             this.validateTextBox1.TexTxt = "";
             this.validateTextBox1.Tipo = Ejercicio10.eTipo.Textual;
