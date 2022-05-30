@@ -1,0 +1,9 @@
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\bin\Debug\ValidateTextBox.dll
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\bin\Debug\ValidateTextBox.pdb
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.ValidateTextBox.resources
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.csproj.GenerateResource.cache
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.dll
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.pdb
+C:\Users\Oscar\source\repos\ValidateTextBox\ValidateTextBox\obj\Debug\ValidateTextBox.prueba.resources
