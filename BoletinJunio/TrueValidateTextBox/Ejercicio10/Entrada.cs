@@ -49,6 +49,7 @@ namespace Ejercicio10
             }
             catch (Exception ex) when ((ex is OutOfMemoryException) || (ex is ArgumentException))
             {
+                path = rutaFotos + "\\default.jpg";
                 errorlbl.Text = ex.Message;
             }
 

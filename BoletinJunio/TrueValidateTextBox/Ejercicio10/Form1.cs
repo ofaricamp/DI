@@ -47,6 +47,7 @@ namespace Ejercicio10
             frikis.Add(friki);
             listBox1.Items.Add(friki);
             
+
             tituloaux = this.Text;
             cont = this.Text.Length -1;
         }
@@ -54,6 +55,7 @@ namespace Ejercicio10
         private void newbtn_Click(object sender, EventArgs e)
         {
             Entrada entrada = new Entrada();
+            friki = new Friki();
 
             if (entrada.ShowDialog() == DialogResult.OK)
             {
@@ -91,6 +93,7 @@ namespace Ejercicio10
             int y = 0;
             pictureBox1.Image = null;
             label1.Text = "";
+            panel1.Controls.Clear();
 
             if (listBox1.SelectedIndices != null && listBox1.SelectedIndices.Count > 0)
             {
