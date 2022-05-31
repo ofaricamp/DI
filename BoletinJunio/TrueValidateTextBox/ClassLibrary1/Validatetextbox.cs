@@ -110,5 +110,10 @@ namespace ClassLibrary1
         {
             this.Height = txt.Height + 20;
         }
+
+        private void Validatetextbox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

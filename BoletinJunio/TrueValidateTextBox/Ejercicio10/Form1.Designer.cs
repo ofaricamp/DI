@@ -42,9 +42,9 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -146,21 +146,26 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "&Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.newbtn_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.borrarToolStripMenuItem.Text = "&Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(106, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.salirToolStripMenuItem.Text = "&Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -170,11 +175,6 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.acercaDeToolStripMenuItem.Text = "&Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // Form1
             // 
@@ -194,6 +194,7 @@
             this.Name = "Form1";
             this.Text = "FrikisLove";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

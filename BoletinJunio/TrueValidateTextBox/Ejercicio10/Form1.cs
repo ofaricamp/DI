@@ -43,7 +43,8 @@ namespace Ejercicio10
             friki = new Friki("AI", 30, rutaFotos + "\\doyon.jpg", eAficion.Manga, eSexo.Mujer, eSexoOpuesto.Mujer);
             frikis.Add(friki);
             listBox1.Items.Add(friki);
-            frikis.Add(new Friki("Ligthning", 99, rutaFotos + "\\pikari.jpg", eAficion.Tecnologia, eSexo.Hombre, eSexoOpuesto.Hombre));
+            friki = new Friki("Ligthning", 99, rutaFotos + "\\pikari.jpg", eAficion.Tecnologia, eSexo.Hombre, eSexoOpuesto.Hombre);
+            frikis.Add(friki);
             listBox1.Items.Add(friki);
             
             tituloaux = this.Text;
@@ -56,27 +57,30 @@ namespace Ejercicio10
 
             if (entrada.ShowDialog() == DialogResult.OK)
             {
-                if (entrada.radioButton1.Checked)
+                if (entrada.validatetextbox1.Comprobar() && entrada.validatetextbox2.Comprobar())
                 {
-                    friki.sexo = eSexo.Hombre;
-                }
-                else
-                {
-                    friki.sexo = eSexo.Mujer;
-                }
+                    if (entrada.radioButton1.Checked)
+                    {
+                        friki.sexo = eSexo.Hombre;
+                    }
+                    else
+                    {
+                        friki.sexo = eSexo.Mujer;
+                    }
 
-                if (entrada.radioButton3.Checked)
-                {
-                    friki.sexoOpuesto = eSexoOpuesto.Hombre;
-                }
-                else
-                {
-                    friki.sexoOpuesto = eSexoOpuesto.Mujer;
-                }
+                    if (entrada.radioButton3.Checked)
+                    {
+                        friki.sexoOpuesto = eSexoOpuesto.Hombre;
+                    }
+                    else
+                    {
+                        friki.sexoOpuesto = eSexoOpuesto.Mujer;
+                    }
 
-                friki = new Friki(entrada.validatetextbox1.TexTxt, int.Parse(entrada.validatetextbox2.TexTxt), entrada.path, (eAficion)entrada.aficionCombox.SelectedItem, friki.sexo, friki.sexoOpuesto);
-                frikis.Add(friki);
-                listBox1.Items.Add(friki);
+                    friki = new Friki(entrada.validatetextbox1.TexTxt, int.Parse(entrada.validatetextbox2.TexTxt), entrada.path, (eAficion)entrada.aficionCombox.SelectedItem, friki.sexo, friki.sexoOpuesto);
+                    frikis.Add(friki);
+                    listBox1.Items.Add(friki);
+                }
             }
         }
 
@@ -85,6 +89,8 @@ namespace Ejercicio10
             Friki frikiaux = new Friki();
             int x = 0;
             int y = 0;
+            pictureBox1.Image = null;
+            label1.Text = "";
 
             if (listBox1.SelectedIndices != null && listBox1.SelectedIndices.Count > 0)
             {
@@ -133,6 +139,8 @@ namespace Ejercicio10
         {
             while (listBox1.SelectedIndex != -1)
             {
+                pictureBox1.Image = null;
+                label1.Text = "";
                 frikis.RemoveAt(listBox1.SelectedIndex);
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
             }
@@ -167,6 +175,11 @@ namespace Ejercicio10
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Nombre de la app: Frikilove\n Creador: Óscar Fariña Campelo\nAgradecimientos especiales:\nAlvaro Rodriguez Vila\nCurro Bellas","Aceca De",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

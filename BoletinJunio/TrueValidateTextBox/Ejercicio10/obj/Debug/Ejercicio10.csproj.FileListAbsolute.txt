@@ -12,3 +12,17 @@ C:\Users\Oscar\source\repos\ValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.Fo
 C:\Users\Oscar\source\repos\ValidateTextBox\Ejercicio10\bin\Debug\ClassLibrary1.dll
 C:\Users\Oscar\source\repos\ValidateTextBox\Ejercicio10\bin\Debug\ClassLibrary1.pdb
 C:\Users\Oscar\source\repos\ValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.csproj.CopyComplete
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\bin\Debug\Ejercicio10.exe.config
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\bin\Debug\Ejercicio10.exe
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\bin\Debug\Ejercicio10.pdb
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\bin\Debug\ClassLibrary1.dll
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\bin\Debug\ClassLibrary1.pdb
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.Entrada.resources
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.Form1.resources
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.Properties.Resources.resources
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.csproj.GenerateResource.cache
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.csproj.CopyComplete
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.exe
+C:\Users\Oscar\source\repos\TrueValidateTextBox\Ejercicio10\obj\Debug\Ejercicio10.pdb

@@ -46,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txt);
             this.Name = "Validatetextbox";
+            this.Load += new System.EventHandler(this.Validatetextbox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
